@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Occupant",
+    "abbreviation": "Occupant",
+    "description" : "Rentor, Lessor, Caretaker."
+  },
+  {
+    "name": "Owner is Occupant",
+    "abbreviation": "Owner/Occupant",
+    "description" : "Title holder, Partnerships."
+  },
+  {
+    "name": "Premise Administator",
+    "abbreviation": "Administrator",
+    "description" : "Site Manager, Leasing Office, Governmental Authority."
+  },
+  {
+    "name": "Representative",
+    "abbreviation": "Representative",
+    "description" : "Realtor, Courts, Law Office, Investors."
+  },
+  {
+    "name": "Not Occupied",
+    "abbreviation": "Empty",
+    "description" : "Premise Empty or Abandoned."
+  },
+  {
+    "name": "Other",
+    "abbreviation": "Other",
+    "description" : "If none of the above applies."
+  }
+]

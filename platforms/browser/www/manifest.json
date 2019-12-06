@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "No Lead Fines!",
+  "short_name": "No Lead Fines!",
+  "version": "com.joyabove.ncw",
+  "description": "No Lead Fines Application.",
+  "author": "Charles Schutz",
+  "icons": [],
+  "orientation": "portrait",
+  "start_url": "index.html"
+}

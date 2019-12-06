@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "areaName": "Dinining Room",
+    "areaFilltype": "INT"
+  },
+  {
+    "id": 2,
+    "areaName": "Hallway",
+    "areaFilltype": "INT"
+  },
+  {
+    "id": 3,
+    "areaName": "Stair Landing",
+    "areaFilltype": "EXT"
+  },
+  {
+    "id": 4,
+    "areaName": "Laundry Room",
+    "areaFilltype": "INT"
+  }
+]

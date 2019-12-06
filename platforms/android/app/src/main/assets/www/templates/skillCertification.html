@@ -1,0 +1,65 @@
+<ion-view title="Skill Certification" id="skillCertification" class=" ">
+
+  <ion-nav-buttons side="right">
+    <!-- <i class="button ion-ios-plus-outline icon-larger">
+     </i>-->
+  </ion-nav-buttons>
+
+<style>
+    .colorfullrow {
+    color: white;border-width: 0px;padding:5% 5% 100px 5%;
+    background: linear-gradient(to right, rgba(165,84,216,1) 0%, rgba(90,57,183,1) 100%)!important;
+    }
+    </style>
+  <ion-content class="has-header course-work">
+    <ion-slide-box show-pager="false" active-slide="activeSlide">
+      <ion-slide ng-repeat=" skill in filtered = (skillList | filter:myFilter : true|orderBy :'userName')" on-swipe-left="leftSwipe()" on-swipe-right="rightSwipe()">
+        <div class="box">
+
+          <div class="row page-top-row colorfullrow"
+               style="color: white;border-width: 0px;padding:5%!important;">
+            <div class="col col-30">
+              <button ng-if="isPreviousSlide && filtered.length >1" ng-click="previousSlide()"
+                      class="button-icon" style="float:right">
+                <img class="" src="img/icon/left_icon.png" style="border-radius:6px">
+              </button>
+            </div>
+            <label class="text-center teamrecord-username col-40" ng-bind="skill.userName"
+                   style="padding-top:3px">
+            </label>
+            <div class="col col-30">
+              <button ng-if="isNextSlide  && filtered.length >1" ng-click="nextSlide()"
+                      class="button-icon" style="">
+                <img class="" src="img/icon/right_icon.png" style="border-radius:6px">
+              </button>
+            </div>
+          </div>
+
+            <div class="list card" ng-repeat="skillInfo in skill.skills" style="color:{{colors[$index]}}"  ng-class="skillInfo.score >=80?'side-balanced':'side-assertive'">
+
+                <div class="item item-text-wrap" >
+
+                    <h2 class="skill-info-title" ng-bind="skillInfo.skillDetail.name"></h2>
+                    <div class="row" style="padding: 0px;">
+
+                        <p class="skill-info-description"  ng-bind="skillInfo.skillDetail.description"></p>
+                        <div style="font-size:40px;display: flex;color:#155b96;position: absolute;right: 10px;top: 32%;" ng-class="skillInfo.score >=80?'balanced':'assertive'" ng-if="skillInfo.score >0 ?true:false">
+                        {{skillInfo.score}} <div style="font-size:12px;position: relative;bottom: 7px;">%</div></div>
+                    </div>
+                    <div class="course-work-detail" style="padding-top: 3%;text-align:left;">
+                        <label ng-if="skillInfo.score >=80" ui-sref="menu.approval({skillId:{{skillInfo.id}},projectId:{{projectId}}})" style="border-radius:25px;width:60px;" class="button button-small button-balanced" >Approve</label>
+                        <label href="#" ng-click="sendMail(skill,skillInfo)" class="button button-small button-calm" style="border-radius:25px;width:60px;">Assign</label>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+
+
+  </ion-content>
+</ion-view>

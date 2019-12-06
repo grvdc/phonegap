@@ -1,0 +1,113 @@
+.item-input .icon{
+  color: $royal;
+}
+
+.side-menu-left{
+  background-color: $royal !important;
+  .item-content{
+    background-color: $royal !important;
+    color:#ffffff !important;
+  }
+  .list{
+    .item{
+      border-width: 0px;
+    }
+  }
+}
+
+.popup-buttons{
+  .button.button-positive{
+    background-color: $royal !important;
+  }
+}
+
+.empty-list-view{
+  color: $royal;
+  font-size: 16px;
+  margin-left: 32px;
+  margin-right: 32px;
+  text-align: center;
+}
+
+.error-list{
+  li{
+    text-align: left;
+  }
+}
+
+.bar-footer{
+  &.two-button-footer {
+    height: 64px;
+    .row{
+      padding: 0px;
+    }
+    .col{
+      padding-top: 0px;
+      .button{
+        font-size: 16px;
+      }
+    }
+  }
+  &.filter-footer{
+    height: 64px;
+    padding: 10px;
+    button{
+      font-size: 16px;
+    }
+  }
+}
+
+.ncw-home{
+  .button-icon{
+    font-size: 32px;
+    color: $royal;
+  }
+
+  span.icon-label{
+    vertical-align: super;
+  }
+}
+
+
+.help-content{
+
+  ul{
+    list-style: outside;
+    color: #666;
+    margin-left: 20px;
+    font-size: 14px;
+  }
+  .item{
+    color: #666;
+  }
+  .item-royal{
+    color: #fff;
+  }
+}
+
+
+.training-videos{
+  .card{
+    margin-top: 10px;
+  }
+}
+
+.item-search{
+  border-radius: 40px;
+  .ion-search{
+    font-size: 24px;
+  }
+}
+
+.course-work{
+  p {
+    &.balanced{
+      color:$balanced !important;
+      white-space: nowrap;margin-left:10px;font-size: 20px;
+    }
+    &.assertive{
+      color:$assertive  !important;
+      white-space: nowrap;margin-left:10px;font-size: 20px;
+    }
+  }
+}

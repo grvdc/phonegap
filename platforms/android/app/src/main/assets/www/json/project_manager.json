@@ -1,0 +1,7 @@
+{
+  "userName" : "john",
+  "emailId" : "john-smith@mail.com",
+  "roles" : "ROLE_USER,ROLE_PROJECT_MANAGER",
+  "type" : "SUPERVISOR",
+  "companyId" : 1
+}

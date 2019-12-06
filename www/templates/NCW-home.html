@@ -1,0 +1,153 @@
+<ion-view hide-back-button="true"  id="page10">
+  <ion-nav-title ng-bind="selectedproject.occupantName">
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+
+  </ion-nav-buttons>
+
+<style>
+.new-home-menu{
+float:left;
+width:100%;
+margin:10% 0px 0px 0px;
+}
+
+.new-home-menu .paddingrow{
+padding: 5%;
+float:left;
+width:100%;
+}
+
+.new-home-menu .paddingrow .item{
+padding: 2%;
+float:left;
+width:50%;
+text-align:center;
+border: 0px;
+}
+
+.new-home-menu .paddingrow .itemfull{
+padding: 2%;
+float:left;
+width:100%;
+text-align:center;
+border: 0px;
+}
+.new-home-menu .paddingrow .item .itemimg,
+.new-home-menu .paddingrow .itemfull .itemimg{
+padding:0px;
+float:left;
+width:100%;
+text-align:center;
+}
+
+.new-home-menu .paddingrow .item .itemimg img,
+.new-home-menu .paddingrow .itemfull .itemimg img{
+width:60px;
+
+}
+
+.new-home-menu .paddingrow .item .title,
+.new-home-menu .paddingrow .itemfull .title{
+    font-weight: 600;
+    font-size: 13px;
+    color: #785dc8;
+    float:left;
+width:100%;
+text-align:center;
+}
+</style>
+
+  <ion-content class="has-header ncw-home">
+
+    <div class="new-home-menu">
+
+      <div class="paddingrow">
+
+        <div class="item">
+          <div class="itemimg">
+          <a ui-sref="menu.ncwProjectList">
+          <img src="img/menu/changeprojects.png">
+          </a>
+          </div>
+          <span class="title">Change Project</span>
+        </div>
+
+        <div class="item" ng-click="getAllTeamMembers()">
+          <div class="itemimg">
+          <img src="img/menu/teammembers.png">
+          </div>
+          <span class="title">Team Members</span>
+        </div>
+
+      </div>
+
+
+      <div class="paddingrow">
+
+        <div class="item" >
+          <div class="itemimg">
+          <a ui-sref="menu.courseWork">
+          <img src="img/menu/skilltraning.png" >
+          </a>
+          </div>
+          <span class="title">RRP Course List</span>
+        </div>
+
+        <div class="item" >
+          <div class="itemimg">
+          <a ui-sref="menu.trainingVideos">
+          <img src="img/menu/training_videos.png" >
+          </a>
+          </div>
+          <span class="title">RRP Video List</span>
+        </div>
+
+      </div>
+
+      <div class="paddingrow"  >
+
+        <div class="item"  ng-click="showContactRenovator()">
+          <div class="itemimg">
+
+          <img src="img/menu/contact.png" >
+
+          </div>
+          <span class="title">Contact Renovator</span>
+        </div>
+
+        <div class="item" >
+          <div class="itemimg">
+          <a ui-sref="menu.help">
+          <img src="img/menu/help.png" >
+          </a>
+          </div>
+          <span class="title">RRP Q&A</span>
+        </div>
+
+      </div>
+
+      <div class="paddingrow"  >
+        <div class="item" >
+          <div class="itemimg">
+          <a ui-sref="menu.changeExitingPassword">
+          <img src="img/menu/changepassword.png" >
+          </a>
+          </div>
+          <span class="title">Change Password</span>
+        </div>
+        <div class="item" ng-click="logout(click)">
+          <div class="itemimg">
+          <img src="img/menu/logout.png">
+          </div>
+          <span class="title">Logout</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </ion-content>
+
+
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view title="Company Information" id="page3" class=" "  >
+  <ion-nav-bar class="bar-yello">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+    <ion-content padding="true" class="has-header">
+        <form id="changePassword-form16" class="list ">
+            <ion-list id="changePassword-list16" class=" ">
+              <div class="spacer" style="height: 50px;padding-top:5%;"></div>
+                <label class="item item-input item-search" id="changePassword-input29" name="tempararyCode">
+                    <input type="text" class="placeholder-padding-space" placeholder="Company Name" disabled="true" ng-model="companyDTO.firmName">
+                </label>
+                <div class="spacer" style="height: 20px;padding-top:5%;"></div>
+                <label class="item item-input item-search" id="changePassword-input30" name="newPassword">
+                    <input type="text" class="placeholder-padding-space" placeholder="FIRM EPA REGISTRATION NUMBER" ng-model="companyDTO.certifiedRenovatorNumber">
+                </label>
+                <div class="spacer" style="height: 20px;padding-top:5%;"></div>
+                <label class="item item-input item-search" id="changePassword-input31" name="confirmPassword">
+                    <input type="text" class="placeholder-padding-space" placeholder="CERTIFIED RENOVATOR NUMBER" ng-model="companyDTO.epaRegistrationNumber">
+                </label>
+                <div class="spacer" style="height: 20px;padding-top:5%;"></div>
+            </ion-list>
+
+            <a ng-click="addCompanyInfo()" id="changePassword-button15" class=" button button-royal  button-block login-button item-search">Submit</a>
+            <a  ng-click="cancle()" id="changePassword-button16" class=" button button-stable  button-block login-button item-search">Cancel</a>
+        </form>
+    </ion-content>
+</ion-view>

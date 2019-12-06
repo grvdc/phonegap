@@ -1,0 +1,36 @@
+<ion-view title="Company Members">
+
+  <ion-nav-buttons side="right" >
+    <button ng-if="membersExist" ng-click="addToProject()" class="button button-icon" ><img class="saveIcon-image" src="img/icon/right_sign.png"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+    <ion-list id="teamMembers-list10">
+
+      <div class="item-avatar item-icon-right" style="padding-left: 0px;min-height: 0px;padding-right: 0px;min-height: 0px !important;"
+           id="teamMembers-list-item29" ng-repeat="member in memberList" ng-if="member.userType != 'ADMIN'">
+
+
+          <ion-checkbox class="item-checkbox-right select-area-label"
+                        ng-model="member.checked"
+                        ng-checked="member.checked">
+                        <ng-letter-avatar class="icon" data={{member.name}}></ng-letter-avatar>
+                        <h2>{{member.name}}</h2>
+                        <p ng-if="member.userType == 'CW'">Certified Renovator</p>
+                        <p ng-if="member.userType == 'NCW'">Non-Certified Worker</p>
+                        <p ng-if="member.userType == 'ADMIN'">Administrator</p>
+                        <p ng-if="member.userType == 'SUPERVISOR'">Supervisor</p>
+                        <p ng-if="member.userType == 'OTHER'">Other</p>
+                        <p ng-if="member.userType == 'FOREMAN'">Foreman</p>
+                        <p ng-if="member.userType == 'WORKER'">Worker</p>
+          </ion-checkbox>
+      </div>
+
+
+    </ion-list>
+
+
+  </ion-content>
+
+
+</ion-view>

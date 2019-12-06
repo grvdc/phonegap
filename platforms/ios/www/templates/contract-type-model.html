@@ -1,0 +1,27 @@
+<ion-modal-view class="occupant-modal" ng-controller="contractTypeModelController">
+
+  <ion-content delegate-handle="contractType">
+
+    <div class="row" ng-repeat="contract in contractTypeList" style="padding: 0;padding-left: 5px;padding-right: 5px;">
+      <ion-radio  style="width:85%;border-left: 0px solid;" ng-model="project.contractType" name="contractTypeId"
+                  ng-value="contract.abbreviation" ng-disabled="isNonCertifiedUser"
+                  class="item item-input pull-left remove-right-border ">{{contract.abbreviation}}</ion-radio>
+
+        <span style="width:15%;cursor:pointer;padding-right:5px;border-right: 0px solid;" class="item remove-left-border" ng-click="openContractDefinition(contract.name,contract.description);popover.show($event)">
+          <i style="position: relative;float:right;font-size:24px;"
+             class="icon  ion-ios-information-outline"></i>
+        </span>
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar class="bar bar-footer" style="background-position: bottom;">
+    <div class="row">
+      <div style="position:absolute;right:15px;">
+        <label style="cursor:pointer;padding-right:50px;color:#886aea;float:left;"
+               ng-click="cancelContractTypeModel()">Cancel</label>
+        <label style="cursor:pointer;color:#886aea;float:left;" ng-click="okContractTypeModel()">Ok</label>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-modal-view>

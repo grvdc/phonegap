@@ -1,0 +1,165 @@
+
+<ion-view title="{{project.projectName}}" id="projectPage" >
+<style>
+.popup-container .popup{
+width:90%;
+}
+.remove_project .popup-head {
+    background: rgba(90,57,183,1);
+    color:#ffffff;
+}
+.remove_project .popup-title{
+color: #fff;
+font-size: 16pt;
+}
+.remove_project{
+color:#645e73;
+}
+.remove_project .button.button-royal{
+background: rgba(90,57,183,1);
+font-size:12pt;
+}
+.remove_project .button.button-stable.button-outline{
+border:2px solid #f0edf7;
+color:#645e73;
+font-size:12pt;
+}
+
+.page-subtitle,.page-top-row{
+background: linear-gradient(to right, rgba(165,84,216,1) 0%, rgba(90,57,183,1) 100%)!important;
+}
+.porject-detail-screen{
+float:left;
+width:100%;
+margin:10% 0px 0px 0px;
+}
+
+.porject-detail-screen .paddingrow{
+padding: 7% 5% 7% 5%;
+float:left;
+width:100%;
+}
+
+.porject-detail-screen .paddingrow .item{
+padding: 5%;
+float:left;
+width:50%;
+text-align:center;
+border: 0px;
+}
+
+.porject-detail-screen .paddingrow .itemfull{
+padding: 5%;
+margin: auto;
+width:150px;
+height:150px;
+text-align:center;
+border: 0px;
+}
+.porject-detail-screen .paddingrow .item .itemimg,
+.porject-detail-screen .paddingrow .itemfull .itemimg{
+padding:0px;
+float:left;
+width:100%;
+text-align:center;
+}
+
+.porject-detail-screen .paddingrow .item .itemimg img,
+.porject-detail-screen .paddingrow .itemfull .itemimg img{
+width:60px;
+
+}
+
+.porject-detail-screen .paddingrow .item .title,
+.porject-detail-screen .paddingrow .itemfull .title{
+    font-weight: 600;
+    font-size: 18px;
+    color: #785dc8;
+    float:left;
+width:100%;
+text-align:center;
+}
+.porject-detail-screen .paddingrow .item{
+    height: 150px;
+    width: 150px;
+    padding: 25px 0px;
+
+}
+.porject-detail-screen .paddingrow .item.left{
+   float:left;
+
+}
+.porject-detail-screen .paddingrow .item.right{
+   float:right;
+
+}
+.porject-detail-screen .paddingrow .item.activated{
+background: #fff url(img/Project-Record-circle.png)!important;
+    background-size: cover!important;
+    background-repeat: no-repeat;
+
+}
+
+.porject-detail-screen .paddingrow .itemfull.activated{
+background: #fff url(img/Project-Record-circle.png)!important;
+    background-size: cover!important;
+    background-repeat: no-repeat;
+
+}
+
+</style>
+  <ion-content class="has-header">
+
+
+        <div class="porject-detail-screen">
+
+          <div class="paddingrow">
+
+            <div class="item left"  ng-click="goToProjectRecordPage(projectId)">
+                <div class="itemimg">
+                 <img src="img/menu/projectrecords.png" >
+                </div>
+                <span class="title">Project Records</span>
+            </div>
+
+            <div class="item right" ng-click="goToTeamMembersPage(projectId)">
+              <div class="itemimg">
+                <img src="img/menu/teamrecords.png" >
+              </div>
+              <span class="title">Team Records</span>
+            </div>
+
+          </div>
+
+
+          <div class="paddingrow">
+
+            <div class="item left" ng-click="goToSelectAreaPage(projectId)">
+             <div class="itemimg">
+              <img src="img/menu/selectarea.png" >
+              </div>
+             <span class="title">Select Areas</span>
+            </div>
+
+            <div class="item right" ng-click="goToSkillCertificationPage(projectId)">
+              <div class="itemimg">
+              <img src="img/menu/certification.png" >
+              </div>
+              <span class="title">Skill Certification</span>
+            </div>
+          </div>
+
+          <div class="paddingrow">
+            <div class="itemfull" ng-click="showDeleteProjectPopup()">
+              <div class="itemimg">
+              <img src="img/menu/delete.png" >
+              </div>
+              <span class="title">Delete</span>
+            </div>
+
+          </div>
+
+        </div>
+
+  </ion-content>
+</ion-view>

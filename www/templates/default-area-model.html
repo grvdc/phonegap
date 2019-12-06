@@ -1,0 +1,27 @@
+<ion-modal-view id="default-area-modal" class="occupant-modal" ng-controller="defaultAreaModelController">
+
+  <ion-header-bar>
+    <h1 class="title">Default Area List</h1>
+  </ion-header-bar>
+
+  <ion-content delegate-handle="defaultArea">
+
+    <div class="row" ng-repeat="area in areaList |orderBy :'areaName'| filter:getNonActiveAndDefaultAreas" style="padding: 0;">
+      <ion-checkbox style="width:100%;border-left: 0px solid;border-right: 0px solid;" ng-model="area.isActive"  content="area.areaName" class="" class="item item-input item-checkbox-right select-area-label pull-left remove-right-border "> {{area.areaName}} </ion-checkbox>
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar class="bar bar-footer" style="background-position: bottom;">
+    <div class="row">
+    <button class="button button-royal-select-area" style="border-radius:25px;width:60%;margin-left:25%;margin-right:20%;"
+     ng-click="okDefaultAreaModel()">Done</button>
+    </div>
+  </ion-footer-bar>
+
+  <style>
+    .modal-backdrop-bg{
+      opacity: 0.1 !important;
+    }
+  </style>
+</ion-modal-view>

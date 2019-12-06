@@ -1,0 +1,15 @@
+<ion-view title="Signature" id="signaturePage" class=" ">
+  <ion-nav-buttons side="right">
+    <button  check-permission="!ROLE_NCW" ng-click="saveSignature()" class="button button-icon"><img class="saveIcon-image" src="img/icon/right_sign.png"></button>
+  </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div style="margin: 0px; line-height: 250px;height: 85%; text-align: center; background-color: rgb(232, 235, 239);">
+          <canvas id="canvasId" height="600" on-touch="OnTouch($event)" on-Drag="OnDrag($event)" on-release="OnRelease($event)"
+                  signature style="border: 2px solid grey;width: 100%;height: 100%;display: block;">
+          </canvas>
+        </div>
+        <div>
+          <button check-permission="!ROLE_NCW" ng-click="clearSign()" class="button item-search button-block button-royal" style="width:70%;margin-left:15%;margin-top: 6%;">Clear</button>
+        </div>
+    </ion-content>
+</ion-view>

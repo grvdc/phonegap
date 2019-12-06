@@ -1,0 +1,17 @@
+[
+  {
+    "name": "United States",
+    "abbreviation": "United States",
+    "description" : "United States is comprised of 50 States."
+  },
+  {
+    "name": "Indian Lands",
+    "abbreviation": "Indian Lands",
+    "description" : "Indian Lands areas set aside by the US Congress enabling indigenous peoples their lands."
+  },
+  {
+    "name": "Territories",
+    "abbreviation": "Territories",
+    "description" : "Territories: American Samoa, Guam, Northern Mariana Islands, Puerto Rico and The US Virgin Islands."
+  }
+]

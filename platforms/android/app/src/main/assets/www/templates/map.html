@@ -1,0 +1,49 @@
+<ion-view title="Map it" id="projectPage" >
+<style>
+.page-subtitle,.page-top-row{
+background: linear-gradient(to right, rgba(165,84,216,1) 0%, rgba(90,57,183,1) 100%)!important;
+}
+.menu-screen-radius.mapsection{
+width: 90%;
+}
+
+iframe {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url(grayscale.svg); /* Firefox 4+ */
+  filter: gray; /* IE 6-9 */
+}
+</style>
+
+  <ion-content class="has-header">
+
+    <div class="item text-center page-subtitle" style="color: white;border-width: 0px;padding: 8% 0% 8% 0%;">
+      <!--<label class="text-center col-40" style="padding-top:3px;color:white;font-size: 18px;"> City : <span ng-bind="city"></span></label></br>
+      <label class="text-center col-40" style="padding-top:3px;color:white;font-size: 18px;"> State : <span ng-bind="state"></span></label></br>
+      --><label class="text-center col-40" style="padding-top:3px;color:white;font-size: 18px;"> Zip Code : <span ng-bind="zipCode | zipcode"></span></label>
+    </div>
+
+    <div class="row page-top-row">
+
+      <div class="menu-screen-radius mapsection">
+      <div id="map" style="height:450px;border-radius: 14px;background: #fff;"></div>
+
+        <!--<ng-map zoom="14"  center="[40.74, -74.18]" style="height:450px;display: block;position: relative;border-radius: 14px;background: #fff;overflow: hidden;">
+            <marker position="{{destination}}" title="You are here" centered="true"></marker>
+        </ng-map>-->
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+  </ion-content>
+
+</ion-view>

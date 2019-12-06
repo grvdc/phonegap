@@ -1,0 +1,56 @@
+<ion-view title="RRP Courses" id="skillCertification" class=" " cache-view="false">
+<style>
+    .colorfullrow {
+    color: white;border-width: 0px;padding:5% 5% 100px 5%;
+    background: linear-gradient(to right, rgba(241,73,140,1) 0%, rgba(212,70,167,1) 100%)!important;
+   }
+</style>
+
+<ion-content class="has-header course-work">
+    <ion-slide-box show-pager="false" active-slide="activeSlide">
+      <ion-slide ng-repeat=" skill in filtered = (skillList | filter:myFilter : true|orderBy :'userName')" on-swipe-left="leftSwipe()" on-swipe-right="rightSwipe()">
+        <div class="box">
+
+          <div class="row page-top-row colorfullrow" style="color: white;border-width: 0px;padding:5%!important;">
+            <div class="col col-30">
+              <button ng-if="isPreviousSlide && filtered.length >1" ng-click="previousSlide()"
+                      class="button-icon" style="float:right">
+                <img class="" src="img/icon/left_icon_pink.png" style="border-radius:6px">
+              </button>
+            </div>
+            <label class="text-center teamrecord-username col-40" ng-bind="skill.userName"
+                   style="padding-top:3px">
+            </label>
+            <div class="col col-30">
+              <button ng-if="isNextSlide  && filtered.length >1" ng-click="nextSlide()"
+                      class="button-icon" style="">
+                <img class="" src="img/icon/right_icon_pink.png" style="border-radius:6px">
+              </button>
+            </div>
+          </div>
+
+            <div class="list card" ng-repeat="skillInfo in skill.skills" ng-click="openCourseGame(skillInfo.skillDetail.name,skillInfo.id)"  style="color:{{colors[$index]}}"  ng-class="skillInfo.score >=80?'side-balanced':'side-assertive'">
+
+                <div class="item item-text-wrap" >
+
+                    <h2 class="skill-info-title" ng-bind="skillInfo.skillDetail.name"></h2>
+                    <div class="row" style="padding: 0px;">
+                        <p class="skill-info-description"  ng-bind="skillInfo.skillDetail.description"></p>
+                        <div style="font-size:40px;display: flex;color:#155b96;position: absolute;right: 10px;top: 32%;" ng-class="skillInfo.score >=80?'balanced':'assertive'" ng-if="skillInfo.score >0 ?true:false">
+                        {{skillInfo.score}}  <div style="font-size:12px;position: relative;bottom: 7px;">%</div></div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+
+
+  </ion-content>
+
+</ion-view>

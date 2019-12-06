@@ -1,0 +1,7 @@
+{
+  "userName" : "adam",
+  "emailId" : "adam-smith@mail.com",
+  "roles" : "ROLE_USER,ROLE_CW",
+  "type" : "CW",
+  "companyId" : 1
+}

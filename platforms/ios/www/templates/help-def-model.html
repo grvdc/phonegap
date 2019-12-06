@@ -1,0 +1,87 @@
+<ion-modal-view class="occupant-modal" ng-controller="helpDefModelController">
+<style>
+.helptitle{height:auto!important;margin:0px 0px 0px 0px;padding:0px;text-align:center;background-color:#cd7b2f; color:#ffffff; font-size: 18pt;}
+.helptitle h1{
+    margin: 0px!important;
+    padding: 10px 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 16pt;
+    color: #fff;
+    }
+
+.helptitle i.ion-close{
+color: #fff!important;
+    position: absolute;
+    right: 15px;
+    font-size: 14pt;
+    padding: 15px 0px;
+    margin: 0px!important;
+    vertical-align: middle;
+}
+.help-content-section{
+background:#fff;
+width:100%;
+float:left;
+top:80px!important;
+}
+.help-content-section .item-body{
+width:90%;
+margin:0px 5%;
+padding:2% 0px;
+border-bottom: 1px solid #efefef;
+border-top: 0px;
+border-left: 0px;
+border-right: 0px;
+}
+.help-content-section .item-body .help-heading{
+background:#fff;
+width:100%;
+float:left;
+color:#cd7b2f;
+font-size: 12pt;
+margin:0px 0px 5px 0px;
+padding:0px;
+}
+
+.help-content-section .item-body .help-content{
+background:#fff;
+width:100%;
+float:left;
+color:#b3b1ba;
+font-size: 10pt;
+margin:0px;
+padding:0px;
+}
+.modal-open .modal .has-header, .modal-open .modal-backdrop .has-header {
+    top: 75px!important;
+        padding-top: 10px;
+}
+
+.help-content-section .item-body .help-content span{
+padding-left: 10px;
+}
+</style>
+
+  <ion-header-bar class="helptitle">
+         <h1>Table of Contents</h1>
+         <i class="icon ion-close" ng-click="okHelpDefModel()"></i>
+
+  </ion-header-bar>
+
+
+  <ion-content delegate-handle=""  class="help-content-section">
+    <div class="item item-body" ng-repeat="category in helpCatList" >
+        <p id="defination-markdown10"  class="help-heading">
+         {{category.name}}
+        </p>
+        <p id="defination-markdown11" class="help-content" ng-repeat="question in helpQuestions | orderBy : '-featured'">
+        <span ng-if="question.category_id == category.id" ng-click=showDetail(question)>{{question.question}}</span>
+        </p>
+    </div>
+
+
+  </ion-content>
+
+
+</ion-modal-view>

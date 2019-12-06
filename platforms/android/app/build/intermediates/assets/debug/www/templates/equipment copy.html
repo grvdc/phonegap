@@ -1,0 +1,123 @@
+<ion-view title="Equipment" id="equipmentPage" class=" ">
+
+<style>
+.item-checkbox.item-checkbox-right{
+float:left;
+width:100%;
+margin:5px 0px;
+}
+
+.item-checkbox.item-checkbox-right .checkbox input:checked:after,
+.item-checkbox.item-checkbox-right input:checked + .checkbox-icon:after{
+border-left: 3px solid #785dc8 !important;
+    border-bottom: 3px solid #785dc8 !important;
+}
+</style>
+
+<ion-nav-buttons side="right">
+    <button check-permission="!ROLE_NCW"  ng-click="goToTeamRecord()" class="button button-icon" ><img class="saveIcon-image" src="img/icon/right_sign.png"></button>
+</ion-nav-buttons>
+
+
+  <ion-content padding="true" class="has-header">
+
+    <form id="addequipment-form6" class="list  " ng-submit="addEquipment()">
+
+      <div class="row remove-row-padding" style="display:block">
+        <div class="spacer" style="height: 10px;"></div>
+        <label class="item item-input  item-search" id="addArea-input3" style="float:left;width:60%;margin-right:2%">
+          <input type="text" placeholder="Tap to Add Equipment" ng-model="equipment.equipmentName" custom-validation>
+        </label>
+        <div style="padding:2%;"></div>
+        <button id="addArea-button32" class=" button button-royal col-20">Add</button>
+        <!--<a style="padding:12px;" ng-click="openFilerOption()" class=" button button-royal col-20">Filter</a>-->
+      </div>
+
+    </form>
+
+    <div id="selectEquipment-form1" >
+      <ion-checkbox class="item-checkbox-right" ng-repeat="equipment in equipmentList |orderBy :['projectId','id'] :false" on-hold="onHoldPopup(equipment,$index)"
+                    ng-model="equipment.check"
+                    ng-checked="equipment.check">
+        {{equipment.equipmentName}}
+      </ion-checkbox>
+    </div>
+
+    <div id="addEquipment">
+
+    </div>
+
+
+
+  </ion-content>
+  <style>
+  .custompopup{
+    z-index: 99999;
+    background: #fff;
+    position:fixed;
+    top:30%;
+    width:80%;
+    left:10%;
+    border:1px solid #efefef;
+    min-height:200px;
+    border-radius: 14px;
+  }
+  .custompopup  .titlebar{
+  float:left;
+  width:100%;
+  padding:15px 20px;
+  background: #5b39b7;
+  color:#fff;
+  border-radius:14px 14px 0px 0px;
+  font-size:16pt;
+  text-align:left;
+  }
+
+  .custompopup  .titlebar .closePopUp{
+  float:right;
+  font-size:16pt;
+  }
+
+  .custompopup .innerarea{
+  float:left;
+  width:100%;
+  padding:10px 20px;
+  }
+
+  .custompopup .innerarea p{
+  float:left;
+  width:100%;
+  margin:10px 0px;
+  padding:0px;
+  }
+  .custompopup .innerarea input[type="radio"], .custompopup .innerarea  input[type="checkbox"]{
+  margin: 5px 0px 0px 0px;
+    line-height: normal;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+  .custompopup .innerarea p label{
+    font-size: 12pt;
+    line-height: normal;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: super;
+  }
+  </style>
+<div ng-if="openFiler" class="custompopup"  style="" >
+    <div class="titlebar">
+        Make a Selection
+        <span class="closePopUp" ng-click="openFilerOption()">X</span>
+    </div>
+
+    <div class="innerarea">
+    <p ng-click="updateFilterOption(1)"><input type="radio" ng-model="filterOption" value="1"> <label>Restore Default list</label></p>
+    <p ng-click="updateFilterOption(2)"><input type="radio" ng-model="filterOption" value="2"> <label>Toggle Added/Equipment List</label></p>
+    <p ng-click="updateFilterOption(3)"><input type="radio" ng-model="filterOption" value="3"> <label>Hide Default list</label></p>
+    <p ng-click="updateFilterOption(4)"><input type="radio" ng-model="filterOption" value="4"> <label>Show Default list</label></p>
+    <p ng-click="updateFilterOption(5)"><input type="radio" ng-model="filterOption" value="5"> <label>Delete Added</label></p>
+    </div>
+</div>
+
+</ion-view>

@@ -1,0 +1,56 @@
+<ion-view title="Approval" id="page10" class=" ">
+  <ion-nav-buttons side="right">
+    <button  check-permission="!ROLE_NCW"  ng-click="updateSkillDetail()" class="button button-icon "><img class="saveIcon-image" src="img/icon/right_sign.png"></button>
+  </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+
+        <div class="spacer" style="width: 300px; height: 25px;"></div>
+        <div class="list" style="width: 80%;margin-left: 10%;">
+          <!--<label class="item item-icon-right item-input item-stacked-label">
+            <span class="input-label">Certification Date</span>
+            <input type="date" ng-disabled="true" ng-model="skillDetail.certification_date">
+          </label>-->
+
+          <label style="float:left;width:100%" class="item item-input calender-radius item-icon-right item-stacked-label label-background" id="projectRecord-input5"
+                 name="emergancyContact" >
+
+            <input type="date" style="padding: 5px;float:left;width:85%;" placeholder="Certification Date" ng-disabled="true" ng-model="skillDetail.certification_date" class="approval-text label-background">
+            <img style="margin-top:8px;width:18px;height:18px;" src="img/icon/calender_icon.png">
+          </label>
+
+          <div class="spacer" style="width: 300px;"></div>
+
+          <ion-list id="forgotPassword-list19" class=" ">
+            <div class="spacer" style="height: 12px;padding-top:6%;"></div>
+            <label class="item item-search label-background approval-text" id="forgotPassword-input36"  name="email" ui-sref="menu.signature({skillId:{{skillDetail.id}},projectId:{{projectId}}})" style="padding-bottom: 12px;padding-top: 12px;">
+
+             <span class="item-icon-right" style="font-size: 14px;">Certifiers Signature<i class="icon ion-ios-arrow-right"></i></span>
+            </label>
+            <div class="spacer" style="height: 10px;padding-top:3%;"></div>
+          </ion-list>
+
+
+
+
+          <div class="spacer" style="width: 300px; height: 10px;"></div>
+          <label class="item item-input item-stacked-label approval-note">
+            <span class="input-label approval-text">Comments</span>
+            <textarea class="approval comments approval-text" ng-model="skillDetail.feedback"></textarea>
+          </label>
+
+          <div class="spacer" style="width: 300px; height: 10px;"></div>
+          <div style="padding: 5%;">
+            <div style="text-align: justify;text-justify: inter-word;">
+                I am the Certified Renovator who is conducting training at this date and location. I verify the student achieved a score of at least 80% for modules listed in the Non-Certified Worker Report Last, Test Date column.
+            </div>
+          </div>
+
+        </div>
+
+        <!--
+          I am the Certified Renovator who is conducting training at this date and location. I verify the student achieved a score of at least 80% for modules listed in the Non-Certified Worker Report Last Test Date column.
+      -->
+
+
+    </ion-content>
+</ion-view>

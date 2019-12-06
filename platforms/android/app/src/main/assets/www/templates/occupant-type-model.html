@@ -1,0 +1,56 @@
+<ion-modal-view class="occupant-modal" ng-controller="occupantModelController">
+<style>
+.row.active .radio-content,
+.row.active i{
+color:#785dc8;
+font-family: 'proxima_novasemibold';
+}
+
+.row.active i.ion-ios-information-outline,
+.row i.ion-ios-information-outline{
+position: relative;float:right;font-size:30px;
+}
+.action-action{
+position:absolute;
+right:15px;
+}
+.action-action label{
+color:#785dc8;
+font-family: 'proxima_novasemibold';
+float:left;
+padding:10px;
+}
+</style>
+  <ion-content delegate-handle="occupant">
+
+    <div  ng-class="{'row active': project.occupantType == occupant.abbreviation, 'row': project.occupantType != occupant.abbreviation}"   ng-repeat="occupant in occupantsList" style="padding: 0;padding-left: 5px;padding-right: 5px;">
+      <ion-radio style="width:85%;border-left: 0px solid;" ng-change="changeOccupant(occupant.name)"
+                 ng-model="project.occupantType" ng-value="occupant.abbreviation"
+                 class="item item-input pull-left remove-right-border">
+        {{occupant.abbreviation}}
+      </ion-radio>
+
+        <a style="width:15%;cursor:pointer;padding-right:5px;border-right: 0px solid;" class="item remove-left-border tooltips" ng-click="openOccupantDefinition(occupant.name,occupant.description);popover.show($event)">
+          <i style=""
+             class="icon  ion-ios-information-outline"></i>
+        </a>
+
+
+    </div>
+
+    <label class="item item-input" ng-if="show">
+      <input type="text" ng-model="project.otherOccupants" required placeholder="Other">
+    </label>
+
+
+
+  </ion-content>
+
+  <ion-footer-bar class="bar bar-footer" style="background-position: bottom;">
+    <div class="action-action" >
+       <button ng-click="cancelOccupantModel()" class="button button-royal-select-area.button-outline">Cancel</button>
+       <button ng-click="okOccupantModel()" class="button button-royal">Ok</button>
+    </div>
+  </ion-footer-bar>
+
+</ion-modal-view>

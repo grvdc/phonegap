@@ -1,0 +1,48 @@
+<ion-view hide-nav-bar="true" header-color="" title="Login" hide-back-button="true" id="page13" class="login-page-background">
+
+<style>
+.item-input .icon {
+    left: 20px;
+}
+</style>
+    <ion-content padding="true" scroll="false" class="login-background" ng-if="pageLoaded" >
+       <div class="login-background-inner" >
+        <form id="loginForm" name="loginForm" class="list " autocomplete="false" ng-submit="login()" style="float:left;margin-top: 6%;width: 80%;margin-left: 10%;margin-bottom: 15%;">
+            <!--<div class="">
+                <img src="img/NoLeadFines_logo.png" width="40%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+            </div>-->
+            <p id="login-markdown24" class="login-position" >Login</p>
+            <ion-list id="login-list20">
+
+
+              <div class="spacer" style="height: 20px;padding-top:65%;"></div>
+
+              <label class="item item-input item-search" id="login-input37" name="email" style="margin-bottom: 10px;">
+                  <div class="item-icon-left"><i class="icon login ion-ios-person-outline"></i></div>
+                  <input autocomplete="off" type="text"  ng-model="userDetails.email" placeholder="Email">
+              </label>
+
+              <div class="spacer" style="height: 10px;"></div>
+
+                <label class="item item-input item-search" id="login-input38" name="password">
+                    <div class="item-icon-left"><i class="icon login ion-ios-locked-outline"></i></div>
+                    <input autocomplete="false" type="password" ng-model="userDetails.password"  placeholder="Password">
+                </label>
+
+              <div class="spacer" style="height: 10px;"></div>
+
+            </ion-list>
+
+            <button type="submit" id="login-button22"  class="button button-block button-royal item-search" >LOGIN</button>
+            <p style="text-align:center;"><a ui-sref="forgotPassword" id="login-button23" class="forget-password-position">Forgot Password?</a></p>
+
+         <div class="login_screen_bottom" >
+             <p class="line-one">Don't have an account? <a href="#" onclick="window.open('https://app.noleadfines.com/#/company-information', '_system')">Sign Up</a></p>
+             <p class="line-two">Version {{instaledAppVersion}}</p>
+         </div>
+        </form>
+       </div>
+    </ion-content>
+
+
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-modal-view>
+<style>
+.bar.bar-royal.email-page{
+ background: rgba(44,218,119,1)!important;
+ background: linear-gradient(to right, rgba(44,218,119,1) 0%, rgba(26,185,79,1) 100%)!important;
+ }
+</style>
+  <ion-header-bar class="bar bar-header bar-royal email-page" align-title="center">
+
+    <h1 class="title title-center header-item">Email</h1>
+<button ng-click="closeModal()" id="member-email-send" class="button button-icon saveIcon email_back_icon">
+<i class="icon ion-ios-arrow-back"></i>
+</button>
+
+  </ion-header-bar>
+
+  <ion-content padding="true" class="has-header">
+ <div class="email-heading">
+  <h1>Say Hello to Us!</h1>
+  <p>We'd love to hear from you about your needs and the questions you have</p>
+
+
+</div>
+
+<div class="email-form">
+<div class="email-form-item">
+<input type="text" class="textbox" placeholder="Subject" ng-model="emailDTO.mailSubject">
+</div>
+
+<div class="email-form-item">
+<textarea placeholder="Message" class="textarea" ng-model="emailDTO.comment" ></textarea>
+
+</div>
+
+<div class="email-form-item">
+  <button ng-click="sendMail()" class="email-form-submit">Submit</button>
+</div>
+</div>
+
+
+  </ion-content>
+
+
+
+</ion-modal-view>

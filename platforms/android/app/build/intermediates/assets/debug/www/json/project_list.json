@@ -1,0 +1,38 @@
+[
+  {
+    "project_id": "1",
+    "name" : "Jackson Pharmacy",
+    "active" : true,
+    "occupant_name" : "Vikas Patel"
+  },
+  {
+    "project_id": "2",
+    "name" : "Linded Elementary School",
+    "active" : false,
+    "occupant_name" : "Adam Smith"
+  },
+  {
+    "project_id": "3",
+    "name" : "Smith Residence",
+    "active" : true,
+    "occupant_name" : "Victor Lebowski"
+  },
+  {
+    "project_id": "4",
+    "name" : "Independent Baptist Church",
+    "active" : false,
+    "occupant_name" : "Oliver Kahn"
+  },
+  {
+    "project_id": "5",
+    "name" : "Holly Agency",
+    "active" : false,
+    "occupant_name" : "Michel Jordan"
+  },
+  {
+    "project_id": "6",
+    "name" : "Arboretum at Arcadia",
+    "active" : true,
+    "occupant_name" : "Max Planck"
+  }
+]

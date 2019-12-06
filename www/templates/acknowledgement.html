@@ -1,0 +1,251 @@
+<ion-view title="Acknowledgement" id="acknowledgement" class=" " cache-view="false">
+
+
+<style>
+.showEquipmentsItemsBoxMain{border-radius:10px;height:60vh;width:100%;overflow:hidden;
+-webkit-box-shadow: -2px 0px 18px 0px rgba(77,63,120,0.07);
+-moz-box-shadow: -2px 0px 18px 0px rgba(77,63,120,0.07);
+box-shadow: -2px 0px 18px 0px rgba(77,63,120,0.07);
+background-color: #fff;
+}
+.showEquipmentsItemsBox{height:60%;width:100%;overflow:auto;}
+.popup-body{padding: 20px 20px 0px 20px;}
+.popup-body p{text-align:left;font-size: 12pt;}
+.popup-body .item-checkbox{border:0px;}
+.popup-body  .checkbox input:before, .popup-body  .checkbox .checkbox-icon:before {
+    border-color: #ddd;
+    border-radius: 0px;
+}
+
+.popup-body .checkbox input:checked:before, .popup-body .checkbox input:checked + .checkbox-icon:before {
+    border-color: #ddd;
+    border-radius: 0px;
+}
+.popup-buttons{margin-bottom:20px}
+.popup-buttons .button.button-nagitive{
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #000;
+}
+.item-checkbox.item-checkbox-right{
+float:left;
+width:100%;
+margin:5px 0px;
+}
+
+.item-checkbox.item-checkbox-right .checkbox input:checked:after,
+.item-checkbox.item-checkbox-right input:checked + .checkbox-icon:after{
+border-left: 3px solid #785dc8 !important;
+border-bottom: 3px solid #785dc8 !important;
+}
+
+.item-checkbox.item-checkbox-right{
+border-left:0px;
+border-right:0px;
+border-top:0px;
+border-bottom:1px solid #ddd;
+margin: 0px;
+}
+
+.showEquipmentsItemsBox p{
+
+    margin: 20px 5%;
+    width: 90%;
+    font-size: 12pt;
+}
+.showEquipmentsItemsBox p img{
+float:right;
+width:20px;
+}
+
+.tab_section{float:left;width:90%;margin:5%;}
+.tab_section .tab_item{padding:8px;border:1px solid rgba(90,57,183,1); float:left;width:50%;margin:0;text-align:center;font-size:12pt;color:rgba(90,57,183,1);}
+.tab_section .tab_item.active{background:rgba(90,57,183,1);color:#fff;}
+.tab_section .tab_item.first{border-radius:5px 0px 0px 5px;}
+.tab_section .tab_item.second{border-radius: 0px 5px 5px 0px;}
+#addequipment-form6{float:left;width:90%;margin:0px 5%}
+#addArea-button32{text-align:center;margin-left:5%;width:35%;}
+.bar_footer_section{float:left;width:90%;margin:5%;text-align:center;}
+.bar_footer_section .button{margin:0px 3px!important;width: 50%;!important;font-size: 12pt!important;line-height: 12px!important;}
+.has-footer {
+    bottom: 75px;
+}
+</style>
+
+    <ion-content padding="true" class="has-header">
+    <div class="spacer" style="width: 300px; height: 25px;"></div>
+    <div class="list" style="width: 80%;margin-left: 10%;">
+          <!--<label class="item item-icon-right item-input item-stacked-label">
+            <span class="input-label">Certification Date</span>
+            <input type="date" ng-disabled="true" ng-model="skillDetail.certification_date">
+          </label>-->
+
+          <label style="float:left;width:100%" class="item item-input calender-radius item-icon-right item-stacked-label label-background" id="projectRecord-input5"
+                 name="emergancyContact" >
+
+            <input type="date" style="padding: 5px;float:left;width:85%;" placeholder="Certification Date" ng-disabled="true" ng-model="acknowledgementDetail.certification_date" class="approval-text label-background">
+            <img style="margin-top:8px;width:18px;height:18px;" src="img/icon/calender_icon.png">
+          </label>
+
+          <div class="spacer" style="width: 300px;"></div>
+
+          <ion-list id="forgotPassword-list19" class=" ">
+            <div class="spacer" style="height: 12px;padding-top:6%;"></div>
+            <label class="item item-search label-background approval-text" id="forgotPassword-input36"  name="email" ui-sref="menu.eqpsignature({memberId:{{memberId}},projectId:{{projectId}}})" style="padding-bottom: 12px;padding-top: 12px;">
+
+             <span class="item-icon-right" style="font-size: 14px;">Certifiers Signature<i class="icon ion-ios-arrow-right"></i></span>
+            </label>
+            <div class="spacer" style="height: 10px;padding-top:3%;"></div>
+          </ion-list>
+
+    </div>
+
+<div class="showEquipmentsItemsBoxMain">
+
+<div class="tab_section">
+<div class="tab_item first {{equipmentsTab}}" ng-click="selectTab('equipments')">
+Equipments
+</div>
+<div class="tab_item second {{materialsTab}}" ng-click="selectTab('materials')">
+Materials
+</div>
+</div>
+
+<div class="showEquipmentsItemsBox" >
+
+<div ng-if="showEquipments">
+  <p ng-repeat="equipment in equipmentList |orderBy :['projectId','id'] :false" ng-if="equipment.type == 'equipment'">
+    {{equipment.equipmentName}}
+    <img ng-if="equipment.check" src="img/icon/tickmark-icon.png">
+    <img ng-if="!equipment.check" src="img/icon/cross-icon.png">
+  </p>
+
+</div>
+
+<div ng-if="!showEquipments">
+    <p ng-repeat="equipment in equipmentList |orderBy :['projectId','id'] :false" ng-if="equipment.type == 'material'">
+     {{equipment.equipmentName}}
+      <img ng-if="equipment.check" src="img/icon/tickmark-icon.png">
+    <img ng-if="!equipment.check" src="img/icon/cross-icon.png">
+    </p>
+ </div>
+
+</div>
+ <div class="bar_footer_section">
+      <button class="button button-royal filterButton" ng-click="goToConfirm()" >Confirm</button>
+  </div>
+
+</div>
+
+
+    </ion-content>
+
+
+
+
+
+</ion-view>
+<style>
+  .custompopup{
+    z-index: 99999;
+    background: #fff;
+    position:fixed;
+    top:10%;
+    width:85%;
+    left:10%;
+    border:1px solid #efefef;
+    height:80vh;
+    border-radius: 14px;
+  }
+  .custompopup  .titlebar{
+  float:left;
+  width:100%;
+  padding:15px 20px;
+  background: #5b39b7;
+  color:#fff;
+  border-radius:14px 14px 0px 0px;
+  font-size:16pt;
+  text-align:left;
+  }
+
+  .custompopup  .titlebar .closePopUp{
+  float:right;
+  font-size:16pt;
+  }
+
+  .custompopup .innerarea{
+  float:left;
+  width:100%;
+  padding:10px 20px;
+  height: 78%;
+  overflow: scroll;
+  }
+
+  .custompopup .innerarea p{
+  float:left;
+  width:100%;
+  margin:10px 0px;
+  padding:0px;
+  }
+  .custompopup .innerarea input[type="radio"], .custompopup .innerarea  input[type="checkbox"]{
+  margin: 5px 0px 0px 0px;
+    line-height: normal;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+  .custompopup .innerarea p label{
+    font-size: 12pt;
+    line-height: normal;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: super;
+  }
+  .custompopup .button_section{float:left;width:100%;padding: 10px 20px;}
+  .custompopup .button_section .actionButton{float:left;width:45%}
+  .custompopup .button_section .actionButtonBH{float:right;width:45%}
+  .custompopup .button_section .button.actionButton.button-royal {
+    border-color: #5b39b7;
+    background-color:transparent;
+    color: #5b39b7;
+    font-size: 14pt;
+    line-height: normal;
+}
+
+.custompopup .item-checkbox{border:0px;}
+.custompopup  .checkbox input:before, .custompopup  .checkbox .checkbox-icon:before {
+    border-color: #ddd;
+    border-radius: 0px;
+}
+
+.custompopup .checkbox input:checked:before, .custompopup .checkbox input:checked + .checkbox-icon:before {
+    border-color: #ddd;
+    border-radius: 0px;
+}
+
+.button {
+    border-radius: 25px !important;
+}
+
+  </style>
+<div ng-if="openConfirmBox" class="custompopup"  style="" >
+    <div class="titlebar">
+        Terms & Conditions
+    </div>
+
+    <div class="innerarea">
+    <p>I agree equipment and materials issued to me during my employment will be returned any time specified by my employer, either through the end of my employment or as such time my usage of the equipment is deemed unnecessary. Additionally, I understand I am required to store issued equipment safely and securely when kept at the project site or in my possession. Materials given to me for projects are to be returned to company stores when no longer necessary.</p>
+    <p>Employees are to discuss with the onsite project Certified Renovator or foremen how to identify materials to be returned. Discuss how to properly handle disposable products, hazardous substances, waste containing lead or other materials generated by the work.</p>
+    <p>Employees are responsible to take reasonable care of issued equipment and notify management of maintenance or safety issues. Project materials are to be stored safely, securely and protected from exposure.</p>
+
+    <div><ion-checkbox class="item-checkbox-left" ng-click="checkTermCond()">I agree to the terms & conditions</ion-checkbox></div>
+
+    </div>
+    <div class="button_section">
+     <button class="button actionButton button-royal " ng-click="goToConfirm()" >Cancel</button>
+     <button class="button actionButtonBH button-royal {{btnDisabled}}" ng-click="saveSignature()" >Accept</button>
+  </div>
+</div>
+
+
+

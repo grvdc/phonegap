@@ -1,0 +1,60 @@
+<ion-view title="{{skills.userName}}" id="course-work" class=" " cache-view="false">
+
+  <ion-nav-buttons side="right">
+    <i ng-if="memberList" style="font-size: 33px;margin-right: 5px;color:#fff;" class="ion-ios-arrow-forward icon-larger" ng-click="getNextSkill()">
+     </i>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header course-work">
+  <div ng-if="adminMode">
+     <ion-slide-box auto-play="false" delegate-handle="image-viewer" does-continue="false" show-pager="false" ng-if="memberListReady">
+
+
+         <ion-slide ng-repeat="member in memberListArray | orderBy:'userId'">
+          <h1 style="float:left;width:100%;text-align: center;font-size: 24px;padding: 10px 0px 0px;">{{member.userName}}</h1>
+          <div style="color:{{colors[$index]}}" class="list card" ng-repeat="skillInfo in member.skills" ng-click="openCourseGame(skillInfo.skillDetail.name,skillInfo.id)" ng-class="(skillInfo.score >= '80') ? 'side-balanced':'side-assertive'">
+
+          <div class="item item-text-wrap">
+
+              <h2 ng-bind="skillInfo.skillDetail.name" style="margin-right:20%;font-size: 14px;"></h2>
+              <div class="row" style="padding: 0px;">
+
+                  <p ng-bind="skillInfo.skillDetail.description" style="font-size:10px; width: 100%;padding-right: 60px;"></p>
+                  <div class="text-right button-medium" style="position: absolute;right: 10px;top: 40%;">
+                    <div style="font-size:36px;display: flex;color:#155b96;" ng-if="skillInfo.score >0 ?true:false">{{skillInfo.score}} <div style="font-size:12px;position: relative;bottom: 7px;">%</div></div>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+        </ion-slide>
+
+
+      </ion-slide-box>
+    </div>
+    <div ng-if="!adminMode">
+     <div style="color:{{colors[$index]}}" class="list card" ng-repeat="skillInfo in skills.skills" ng-click="openCourseGame(skillInfo.skillDetail.name,skillInfo.id)" ng-class="(skillInfo.score >= '80') ? 'side-balanced':'side-assertive'">
+
+     <div class="list card" ng-repeat="skillInfo in skills.skills" ng-click="openCourseGame(skillInfo.skillDetail.name,skillInfo.id)" style="color:{{colors[$index]}}" ng-class="(skillInfo.score >= '80') ? 'side-balanced':'side-assertive'">
+
+          <div class="item item-text-wrap">
+
+              <h2 ng-bind="skillInfo.skillDetail.name" class="course-work-title"></h2>
+              <div class="row" style="padding: 0px;">
+
+                  <p class="course-work-detail" ng-bind="skillInfo.skillDetail.description"></p>
+                  <div class="course-work-score">
+                    <div class="course-work-score-inner-one" ng-if="skillInfo.score >0 ?true:false">
+                    {{skillInfo.score}} <div class="course-work-score-inner-two">%</div></div>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+    <!--</div>-->
+
+  </ion-content>
+</ion-view>

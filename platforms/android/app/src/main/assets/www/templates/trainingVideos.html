@@ -1,0 +1,85 @@
+<ion-view title="RRP Video List" id="trainingVideos" class=" ">
+
+<style>
+video::-webkit-media-controls-fullscreen-button{
+    display: none;
+}
+.video_section{
+float:left;
+width:100%;
+margin:10px 0px;
+display: inline-block;
+position: relative;
+}
+.play-overlay{
+position: absolute;
+width: 100%;
+text-align: center;
+}
+
+.play-overlay img{
+width:50px;
+height:50px;
+}
+.video_section,.play-overlay, video.video_player{
+height:200px;
+}
+.play-overlay img{
+margin-top: 75px;
+}
+
+@media screen and (max-width: 380px) {
+.video_section,.play-overlay, video.video_player{
+height:185px;
+}
+.play-overlay img{
+margin-top: 67px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.video_section,.play-overlay, video.video_player{
+height:155px;
+}
+.play-overlay img{
+margin-top: 52px;
+}
+}
+
+</style>
+  <ion-content padding="true" class="has-header training-videos">
+
+      <div style="padding:10px 20px;">
+      <label class="item item-input item-search">
+          <i class="icon ion-search placeholder-icon" style="color:#726357!important;"></i>
+          <input type="text" placeholder="Search" ng-model="videoSearch">
+
+      </label>
+      </div>
+
+    <ion-list ng-repeat="video in videoUrls | filter: videoSearch" >
+
+      <div class="card">
+        <ion-item>
+          <div class="video-container" id="videoContainer-{{$index+1}}">
+            <div class="video-container-title">{{video.title}}</div>
+
+             <!--<iframe id="myFrame" width="100%" data-ng-src="{{video.src}}" title="{{video.title}}" allowfullscreen="true" controls="" autoplay="false"  height=300></iframe>-->
+            <div class="video_section" >
+            <div style="z-index:9999" id="playOverlay-{{$index+1}}"  class="play-overlay" ng-click="playVideo({{$index+1}})"><img src="img/play-icon.png"></div>
+            <video style="z-index:0" class="video_player" id="myvideo-{{$index+1}}"  src="{{video.src}}"  poster="{{video.poster}}" width="100%" height="100%"  controlsList="nofullscreen nodownload">
+            </video>
+
+            </div>
+
+            <div class="video-container-detail">{{video.discription}}</div>
+
+          </div>
+        </ion-item>
+      </div>
+
+    </ion-list>
+
+  </ion-content>
+
+</ion-view>

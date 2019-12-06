@@ -1,0 +1,15 @@
+{
+  "id": 2,
+  "name" :"Suresh Bangora",
+  "homePhone" : "123456",
+  "cellPhone" : "123456",
+  "emergancyPhone": "123456",
+  "emergancyContact": "Mihir Bangora",
+  "address1": "6404 Ivy Lane",
+  "address2": "",
+  "city" : "Greenbelt",
+  "state" : "New York",
+  "zipCode":"398801",
+  "country": "USA",
+  "userType": "NCW"
+}

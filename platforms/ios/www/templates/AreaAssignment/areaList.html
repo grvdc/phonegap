@@ -1,0 +1,130 @@
+<ion-view title="Area List" class="item-text-wrap" id="selectAreaPage" >
+<style>
+.occupant-modal h1{
+background:#5b39b7;
+margin: 0px!important;
+color: #ffffff!important;
+font-size:14pt!important;
+}
+#selectArea-form1 .item{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 5px;
+}
+.select-area-label{
+padding-left:0px!important;
+padding-right:0px!important;
+margin:0px 20px!important;
+}
+#filter_item_section{float:left;width:100%;}
+.item-search{width:100%;}
+.item.item-search {
+    border: 1px solid #444;
+    border-radius: 10px;
+}
+
+.item-search input{background:url('img/assets/search.png');background-repeat: no-repeat; background-size: 24px;background-position: 96%; }
+.projectnameinput{border-bottom: 1px solid #efefef!important;width: 100%;height:auto!important;padding-bottom: 5px;}
+.action_box{float:left;width:90%;margin:0px 5%;text-align:right;color:#444;}
+.action_box a{color:#444;}
+.checkbox input:checked:after, input:checked + .checkbox-icon:after {
+    border-left: 2px solid #444 !important;
+    border-bottom: 2px solid #444 !important;
+}
+.filter-image {
+    width: 27px;
+    height: auto;
+    margin-top: 30%;
+}
+#addArea-form6{margin-bottom:5px!important;}
+.bar-footer{display: block;}
+.bar-footer-text{display: block;float:left;text-align:center;padding: 15px 0px 0px 0px;width: 100%;text-decoration: underline;}
+.bar-footer-text img{width:18px;height:auto;}
+.filter_item_row {float:left;width:100%;}
+.filter_item_row .item {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 5px;
+}
+.area_item_option_box{float:left;width:100%;padding:0px 15px 0px 15px;display:none}
+.area_item_option_box img{width:20px;margin:5px 10px;}
+.selectd_area{
+border:1px solid #efefef;
+margin-top:-1px;
+border-radius:8px;
+}
+.is_default_false .item{color:#40e0d0!important}
+input[type="text"].group_name{display:none;margin-bottom: 10px; margin-left: 5px;float:left;width:90%;border-bottom:1px solid #efefef;padding:8px 10px 8px 0px;border-radius:5px;color:#444;}
+</style>
+
+
+<ion-nav-buttons side="right">
+    <button ng-click="goToAddArea()" class="button button-icon saveIcon ion-android-add select-area-add-button"></button>
+    <button check-permission="!ROLE_NCW" ng-click="saveOrUpdate()"  class="button button-icon"><img class="filter-image" src="img/assets/filter.png"></button>
+  </ion-nav-buttons>
+
+
+    <ion-content class="has-header" scroll="false">
+
+    <form id="addArea-form6" class="list" ng-submit="searchProject()">
+
+         <div class="row remove-row-padding">
+
+          <label class="item item-input item-search" id="addArea-input3" >
+            <input type="text" placeholder="Search for Area Name" ng-model="searchform.searchKey" ng-keyup="searchItems()">
+          </label>
+
+       </div>
+
+    </form>
+
+    <div class="action_box">
+    <a href="javascript:void(0)" ng-click="toggleSelectAll()">{{toggleSelectAllText}}</a>
+    </div>
+
+
+ <div class="scroll" style="height:100%;overflow:scroll;padding:0px 10px">
+
+
+
+       <div id="filter_item_section">
+        <div id="area_item_{{area.id}}" on-hold="showItemOption({{area.id}})"   class="filter_item_row is_default_{{area.isDefault}}" ng-repeat="area in areaList | orderBy :'areaName'| filter:getActiveAndNonDefaultAreas">
+          <ion-checkbox ng-model="area.isActive" ng-change="selectItem({{area.id}},{{!area.isActive}})" content="area.areaName" class="item-checkbox-right select-area-label"> {{area.areaName}} </ion-checkbox>
+          <div class="area_item_option_box">
+          <input type="text" class="group_name" id="new_area_name_{{area.id}}" placeholder="Enter Group Name" value="{{area.areaName}}">
+
+          <img src="img/assets/group.png" ng-click="addArea({{area.id}},{{area.isDefault}})">
+          <img src="img/assets/edit.png" ng-click="editArea({{area.id}})">
+          <img src="img/assets/addmember.png">
+          <img src="img/assets/delete.png">
+          <img src="img/assets/back.png" ng-click="hideItemOption({{area.id}})" >
+          <img src="img/assets/equipment.png">
+          </div>
+        </div>
+       </div>
+      </div>
+    </ion-content>
+
+  <ion-footer-bar class="bar bar-footer" style="margin-bottom: 2%;margin-top: 4%;">
+    <div class="row">
+
+     <button class=" button button-royal-select-area" style="border-radius:25px;width:45%;margin-left:5%;margin-right:0%;"
+              ng-click="removeSelected()">Remove Selected</button>
+
+      <button class=" button button-royal-select-area"
+              style="border-radius:25px;width:45%;margin-left:5%;margin-right:5%;"
+              ng-click="goToAssignments()">Save As Project</button>
+
+
+
+    </div>
+
+    <p class="bar-footer-text" ng-click="showSelectedItemsOnly()"><img src="img/assets/view-eye.png"> {{showSelectedItemsOnlyText}}</p>
+
+
+  </ion-footer-bar>
+</ion-view>

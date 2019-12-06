@@ -1,0 +1,44 @@
+<ion-modal-view class="delivery-type-modal" ng-controller="DeliveryTypeModelController">
+
+  <ion-content delegate-handle="">
+
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="Occupant"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Occupant</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="Occupant is Owner"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Occupant is Owner</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="Refused to sign"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Occupant refused to sign</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="Left at front door"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Left at the front door</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="Slide under the door"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Slide under the door</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="No one home"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">No one home</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="2 weeks prior to project"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Certified Mail 2 weeks prior to project</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="Building common areas"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Supplied in building common areas</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="project.pamphletDeliveryType"
+                  name="memberType" value="Other"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Other</ion-radio>
+
+  </ion-content>
+
+<ion-footer-bar class="bar bar-footer" style="background-position: bottom;">
+
+      <div class="action-action" >
+       <button ng-click="cancelDeliveryType()" class="button button-royal-select-area.button-outline">Cancel</button>
+       <button ng-click="okDeliveryType()" class="button button-royal">Ok</button>
+      </div>
+
+  </ion-footer-bar>
+
+</ion-modal-view>

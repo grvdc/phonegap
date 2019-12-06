@@ -1,0 +1,21 @@
+<ion-view title="Occupant Type" id="page6" class=" " >
+    <ion-content class="has-header" >
+
+  <ion-radio ng-repeat="data in allOccupants" ng-model="occupantType" ng-click="data !='Other'?setSelectedOccupantType(occupantType):showOtherOccupant()" name="occupantTypeId" ng-value="data" ng-disabled="isNonCertifiedUser" class=" ">{{data}}</ion-radio>
+
+           <!-- <ion-radio ng-model="occupantType" ng-click="setSelectedOccupantType(occupantType);hideOtherOccupant()" name="occupantTypeId" ng-value="'Occupant'" ng-disabled="isNonCertifiedUser" class=" ">Occupant</ion-radio>
+            <ion-radio ng-model="occupantType" ng-click="setSelectedOccupantType(occupantType);hideOtherOccupant()"name="occupantTypeId" ng-value="'Owner is Occupant'"  ng-disabled="isNonCertifiedUser" class=" ">Owner is Occupant</ion-radio>
+            <ion-radio ng-model="occupantType" ng-click="setSelectedOccupantType(occupantType);hideOtherOccupant()" name="occupantTypeId" ng-value="'Premise Administrator'"   ng-disabled="isNonCertifiedUser" class=" ">Premise Administrator</ion-radio>
+            <ion-radio ng-model="occupantType" ng-click="setSelectedOccupantType(occupantType);hideOtherOccupant()"  name="occupantTypeId" ng-value="'Representative'"   ng-disabled="isNonCertifiedUser" class=" ">Representative</ion-radio>
+            <ion-radio ng-model="occupantType" ng-click="setSelectedOccupantType(occupantType);hideOtherOccupant()"  name="occupantTypeId" ng-value="'Housing is not occupied'"   ng-disabled="isNonCertifiedUser" class=" ">Housing is not occupied</ion-radio>
+            <ion-radio ng-model="occupantType" ng-click="showOtherOccupant()"  name="occupantTypeId" ng-value="'Other'"  ng-disabled="isNonCertifiedUser" ng-value=""   class=" ">Other</ion-radio>-->
+
+            <label class="item item-input" ng-if="show">
+              <input type="text" ng-model="project.occupantType" placeholder="Other" ng-keypress="$event.keyCode == 13 && setOtherSelectedOccupantType(project.occupantType) " >
+            </label>
+    </ion-content>
+  <ion-footer-bar align-title="left" class=" ">
+    <button ng-click="openDefination()"  class="button col button button-royal"> Definitions </button>
+  </ion-footer-bar>
+
+</ion-view>

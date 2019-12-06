@@ -1,0 +1,50 @@
+<ion-view title="RRP Q&A" id="helpPage" class="">
+
+<style>
+.help-content mark{
+background: #7868a9;
+color: white;
+
+}
+.modal{
+    background-color: transparent;
+}
+</style>
+  <ion-content padding="true" class="has-header help-content" >
+      <div class="help-section">
+
+      <label class="item item-input item-search">
+          <i class="icon ion-search placeholder-icon" style="color: #a39db2!important;"></i>
+          <input type="text" placeholder="Search" id="helpSearch" ng-keyup="searchITM()" ng-model="helpSearch" style="font-size: 12pt;color: #a39db2!important;">
+      </label>
+      </div>
+      <ion-list >
+          <div class="help-section">
+          <div  ng-repeat="help in helpList | filter: helpSearch | orderBy : '-featured'" class="help-item" >
+              <ion-item class="item item-text-wrap item-icon-right" ng-click="toggleHelp(help)" ng-class="{'item-royal': isHelpShown(help)}">
+                  <div class="help_question">{{help.question}}</div>
+                  <i class="icon" ng-class="isHelpShown(help) ? 'ion-ios-arrow-down' : 'ion-ios-arrow-right'"></i>
+              </ion-item>
+              <div class="item item-text-wrap help_question" ng-show="isHelpShown(help)" ng-bind-html="help.answer">
+
+              </div>
+         </div>
+
+
+
+         </div>
+       </ion-list>
+  </ion-content>
+
+  <ion-footer-bar class="bar bar-footer" style="margin-bottom: 2%;margin-top: 4%; background:#fff;margin-left: 3%;margin-right: 3%;width: 94%;border-radius: 20px;height:55px;">
+    <div class="row">
+
+      <button class=" button button-royal"
+              style="border-radius:25px;background:#cd7b2f;width:50%;margin-left:25%;"
+              ng-click="openHelpDefModel()"> Table of Contents
+      </button>
+
+    </div>
+  </ion-footer-bar>
+
+</ion-view>

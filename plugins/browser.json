@@ -1,0 +1,34 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.joyabove.ncw"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "com.joyabove.ncw"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.joyabove.ncw"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "com.joyabove.ncw"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.joyabove.ncw"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.joyabove.ncw"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.joyabove.ncw"
+    }
+  }
+}

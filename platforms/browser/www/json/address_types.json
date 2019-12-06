@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Single Family",
+    "abbreviation": "Single Family",
+    "description" : "Occupied by one family group or extended family."
+  },
+  {
+    "name": "Duplex",
+    "abbreviation": "Duplex",
+    "description" : "Residential building divided into sections with each section having a separate entrance."
+  },
+  {
+    "name": "Apartment Building",
+    "abbreviation": "Apartments",
+    "description" : "Residential housing with common entrance areas."
+  },
+  {
+    "name": "Multi Family Low Rise",
+    "abbreviation": "Low Rises",
+    "description" : "Apartment Buildings not more than 3 stories."
+  },
+  {
+    "name": "Multi Family High Rise",
+    "abbreviation": "High Rise",
+    "description" : "Apartment Buildings above 3 stories."
+  },
+  {
+    "name": "Gated Community",
+    "abbreviation": "Gated",
+    "description" : "Housing where access is restricted by a common gate and walls for security and privacy."
+  },
+  {
+    "name": "Planned Community",
+    "abbreviation": "Planned Community",
+    "description" : "Housing reserved for older adults still having the ability for self-care."
+  },
+  {
+    "name": "Public Housing",
+    "abbreviation": "Public Housing",
+    "description" : "Federal, State or locally funded in part or wholly by tax payers for low income families."
+  }
+]

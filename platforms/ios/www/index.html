@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- compiled css output -->
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px;
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+
+    </style>
+
+    <style type="text/css">
+      /* Custom style colors for toggle */
+      .toggle.toggle-my-theme input:checked + .track {
+        border-color: #b1b1b1;
+        background-color: #b1b1b1;
+      }
+
+
+      .toggle-text > .track {
+
+        width: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+        border: 0;
+        height: 30px;
+        background: #5cc470;
+      }
+
+      .toggle-text .handle {
+        left: 6px;
+      }
+
+      .toggle-text .handle-text {
+        font-size: 24px;
+        color: white;
+        position: absolute;
+        top: -5px;
+
+      }
+
+      .toggle-text .handle-text-false {
+        left: 36px;
+      }
+
+      .toggle-text input:checked + .track .handle {
+        -webkit-transform: none;
+        -moz-transform: none;
+        transform: none;
+        left: calc(100% - 34px);
+      }
+      .track-text {
+        line-height: 26px;
+        color: white;
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .bar.item-input-inset .item-input-wrapper input {
+        width: 100%;
+      }
+
+      .search-wrapper-light {
+        border-bottom: 2px solid rgba(255,255,255,0.5);
+        background: none;
+        border-radius: 0;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      .search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
+        color: #ffffff;
+      }
+
+    </style>
+
+    <script src="js/app.js"></script>
+    <script src="lib/jquery/jquery-1.9.1.min.js"></script>
+    <!-- Controllers -->
+    <script src="js/controller/add-area-ctrl.js"></script>
+    <script src="js/controller/approval-ctrl.js"></script>
+    <script src="js/controller/assignments-ctrl.js"></script>
+    <script src="js/controller/change-password-ctrl.js"></script>
+    <script src="js/controller/defination-ctrl.js"></script>
+    <script src="js/controller/forgot-password-ctrl.js"></script>
+    <script src="js/controller/home-ctrl.js"></script>
+    <script src="js/controller/login-ctrl.js"></script>
+    <script src="js/controller/member-type-ctrl.js"></script>
+    <script src="js/controller/occupants-type-ctrl.js"></script>
+    <script src="js/controller/project-ctrl.js"></script>
+    <script src="js/controller/project-list-ctrl.js"></script>
+    <script src="js/controller/project-record-ctrl.js"></script>
+    <script src="js/controller/select-area-ctrl.js"></script>
+    <script src="js/controller/signature-ctrl.js"></script>
+    <script src="js/controller/skill-certification-ctrl.js"></script>
+    <script src="js/controller/team-members-ctrl.js"></script>
+    <script src="js/controller/team-record-ctrl.js"></script>
+    <script src="js/controller/company-members-ctrl.js"></script>
+    <script src="js/controller/help-ctrl.js"></script>
+    <script src="js/controller/member-email-ctrl.js"></script>
+    <script src="js/controller/menu-ctrl.js"></script>
+    <script src="js/controller/training-videos-ctrl.js"></script>
+    <script src="js/controller/captive-game-ctrl.js"></script>
+    <script src="js/controller/NCW-home-ctrl.js"></script>
+    <script src="js/controller/course-work-ctrl.js"></script>
+    <script src="js/controller/NCW-area-ctrl.js"></script>
+    <script src="js/controller/add-existing-member-ctrl.js"></script>
+    <script src="js/controller/contract-type-ctrl.js"></script>
+    <script src="js/controller/address-type-ctrl.js"></script>
+    <script src="js/controller/equipment-ctrl.js"></script>
+    <script src="js/controller/change-existing-password-ctrl.js"></script>
+    <script src="js/controller/course-game-ctrl.js"></script>
+    <script src="js/controller/map-ctrl.js"></script>
+    <script src="js/controller/ncw-project-list-ctrl.js"></script>
+    <script src="js/controller/occupant-model-ctrl.js"></script>
+    <script src="js/controller/address-type-model-ctrl.js"></script>
+    <script src="js/controller/contract-type-mode-ctrl.js"></script>
+    <script src="js/controller/company-info-ctrl.js"></script>
+    <script src="js/controller/help-def-model-ctrl.js"></script>
+    <script src="js/controller/member-type-model-ctrl.js"></script>
+    <script src="js/controller/country-model-ctrl.js"></script>
+    <script src="js/controller/default-area-model-ctrl.js"></script>
+    <script src="js/controller/delivery-type-model-ctrl.js"></script>
+    <script src="js/controller/eqpsignature-ctrl.js"></script>
+    <script src="js/controller/acknowledgement-ctrl.js"></script>
+
+    <script src="js/controller/area-assignment-ctrl.js"></script>
+
+    <script src="js/routes.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/authentication-service.js"></script>
+    <script src="js/services/login-service.js"></script>
+    <script src="js/services/project-service.js"></script>
+    <script src="js/services/team-member-service.js"></script>
+    <script src="js/services/area-service.js"></script>
+    <script src="js/services/skill-certification-service.js"></script>
+    <script src="js/services/training-videos-service.js"></script>
+    <script src="js/services/occupant-type-service.js"></script>
+    <script src="js/services/company-member-service.js"></script>
+    <script src="js/services/contract-type-service.js"></script>
+    <script src="js/services/address-type-service.js"></script>
+    <script src="js/services/equipment-service.js"></script>
+    <script src="js/services/assignment-service.js"></script>
+    <script src="js/services/signature-service.js"></script>
+    <script src="js/services/equipment-associate-service.js"></script>
+    <script src="js/services/change-password-service.js"></script>
+    <script src="js/services/help-service.js"></script>
+    <script src="js/services/company-service.js"></script>
+    <script src="js/services/ionic-close-popup.js"></script>
+
+    <!-- Directives -->
+    <script src="js/directives/check-permission.js"></script>
+    <script src="js/directives/signature.js"></script>
+    <script src="js/directives/ion-searchbar.js"></script>
+    <script src="js/directives/phone-input.js"></script>
+    <script src="js/directives/restrict-input.js"></script>
+    <script src="js/directives.js"></script>
+
+    <script src="lib/ui-mask/mask.min.js"></script>
+    <script src="lib/letter-avatar/ngletteravatar.js"></script>
+    <script src="lib/ionic/js/angular-ui/angular-ui-router.min.js"></script>
+    <script src="lib/ng-map/ng-map.min.js"></script>
+    <script src="cordova.js"></script>
+    <!-- Only required for Tab projects w/ pages in multiple tabs
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    -->
+    <!-- google maps javascript -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnPSTq9O6N5AZpPIKDZsRtPINDr1bowzg&v=3.exp&libraries=places">
+</script>
+  </head>
+  <body animation="slide-left-right-ios7" class="platform-ios platform-cordova platform-webview">
+  <div>
+    <div>
+        <ion-nav-bar class="bar-royal">
+            <ion-nav-back-button class="button-icon icon ion-ios-arrow-back"></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+    </div>
+</div>
+  </body>
+</html>

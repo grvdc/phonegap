@@ -1,0 +1,170 @@
+<ion-view title="Project Information" id="page5" class="">
+
+  <ion-nav-buttons side="right">
+    <button ng-if="isEditable" ng-click="saveOrUpdate()" class="button-icon">
+        <img class="saveIcon-image" src="img/icon/right_sign.png">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+    <form id="projectRecord-form6" name="projectRecordForm" class="list " novalidate>
+      <fieldset style="border: none;margin: 0px;padding: 0px" ng-disabled="isNonCertifiedUser">
+        <label class="item item-input item-stacked-label"
+               name="project_name">
+          <span class="input-label">Project Name *</span>
+          <input type="text" class="teamrecord-username" placeholder="Project Name"
+                 ng-model="project.projectName" custom-validation>
+        </label>
+        <label class="item item-input item-stacked-label"
+               name="occupant_name">
+          <span class="input-label">Occupant Name *</span>
+          <input type="text" class="teamrecord-username" placeholder="Occupant Name"
+                 ng-model="project.occupantName" custom-validation>
+        </label>
+
+
+        <!--<ion-item class="item-icon-right item row custom-row" ng-click="gotoOccupantPage()"
+                  ng-controller="occupantsTypeCtrl">
+          <span class="col col-50 custom-label">Occupants Type</span>
+          <label class="col col-50 custom-type-label ng-binding custom-label"
+                 style="font-size: small;">{{selectedOccupantTypeOption}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>-->
+
+        <ion-item class="item-icon-right item row custom-row" ng-click="openOccupantModel()">
+          <span class="col col-50 custom-label">Occupants Type</span>
+          <label class="col col-50 custom-type-label ng-binding custom-label"
+                 style="font-size: small;">{{project.occupantType}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+
+        <label class="item item-input item-stacked-label" id="projectRecord-input2"
+               name="homePhone">
+          <!--ui-mask="(999) 999-9999" ui-mask-placeholder-->
+          <span class="input-label">Home Phone *</span>
+          <input type="tel" ui-mask="(999) 999-9999" ui-mask-placeholder placeholder="Home Phone"
+                 ng-model="project.homePhone">
+        </label>
+        <label class="item item-input item-stacked-label" id="projectRecord-input3"
+               name="cellPhone">
+          <span class="input-label">Cell Phone</span>
+          <input type="tel" ui-mask="(999) 999-9999" ui-mask-placeholder placeholder="Cell Phone"
+                 ng-model="project.cellNumber">
+        </label>
+        <label class="item item-input item-stacked-label" id="projectRecord-input4"
+               name="emergancyPhoneNumber">
+          <span class="input-label">Emergency Phone Number</span>
+          <input type="tel" ui-mask="(999) 999-9999" ui-mask-placeholder
+                 placeholder="Emergency Phone Number" ng-model="project.emergencyCellNumber">
+        </label>
+        <label class="item item-input item-stacked-label" id="projectRecord-input5"
+               name="emergancyContact">
+          <span class="input-label">Emergency Contact</span>
+          <input type="text" placeholder="Emergency Contact" ng-model="project.emergencyContact"
+                 custom-validation>
+        </label>
+        <!--<ion-item class="item-icon-right  " id="projectRecord-list-item24" ng-click="gotoAddressPage()" ng-controller="addressTypeCtrl">Address Type
+          <label class="custom-type-label" style="font-size: small;float: right;">{{selectedAddressTypeOption}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>-->
+
+       <!-- <ion-item class="item-icon-right item row custom-row" ng-click="gotoAddressPage()"
+                  ng-controller="addressTypeCtrl">
+          <span class="col col-50 custom-label">Address Type</span>
+          <label class="col col-50 custom-type-label ng-binding custom-label"
+                 style="font-size: small;">{{selectedAddressTypeOption}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>-->
+
+
+
+        <ion-item class="item-icon-right item row custom-row" ng-click="openAddressTypeModel()">
+          <span class="col col-50 custom-label">Address Type</span>
+          <label class="col col-50 custom-type-label ng-binding custom-label"
+                 style="font-size: small;">{{project.addressType}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+
+        <label class="item item-input item-stacked-label" id="projectRecord-input6"
+               name="addressOne">
+          <span class="input-label">Address *</span>
+          <input type="text" placeholder="Address" ng-model="project.address1" custom-validation>
+        </label>
+        <label class="item item-input item-stacked-label" id="projectRecord-input7"
+               name="addressTwo">
+          <span class="input-label">Address 2</span>
+          <input type="text" placeholder="Address 2" ng-model="project.address2" custom-validation>
+        </label>
+        <label class="item item-input item-stacked-label" id="projectRecord-input8" name="city">
+          <span class="input-label">City *</span>
+          <input type="text" placeholder="City" ng-model="project.city" custom-validation>
+        </label>
+        <label class="item item-input item-stacked-label" id="projectRecord-input9" name="zipCode">
+          <span class="input-label">Zip Code *</span>
+          <input type="text" only-digits placeholder="XXXXX-XXXX" ng-model="project.zipCode"
+                 maxlength="10" ui-mask="99999-9999" ui-mask-placeholder>
+        </label>
+        <label class="item item-input item-stacked-label" name="state">
+          <span class="input-label">State *</span>
+          <input type="text" placeholder="State" ng-model="project.state" limit-char limit="2"
+                 capitalize>
+        </label>
+        <ion-item class="item-icon-right item row custom-row" ng-click="openCountryModel()">
+          <span class="col col-50 custom-label">Country</span>
+          <label class="col col-50 custom-type-label ng-binding custom-label"
+                 style="font-size: small;">{{project.country}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+        <label class="item item-input item-stacked-label" id="projectRecord-input10" name="county">
+          <span class="input-label">County *</span>
+          <input type="text" placeholder="County" ng-model="project.county" custom-validation>
+        </label>
+        <!-- <ion-item class="item-icon-right  " ng-click="gotoContractPage()" ng-controller="contractTypeCtrl">Contract Type
+           <label class="custom-type-label" style="font-size: small;float: right;">{{selectedContractTypeOption}}</label>
+           <i class="icon ion-ios-arrow-right"></i>
+         </ion-item>-->
+
+        <!--<ion-item class="item-icon-right item row custom-row" ng-click="gotoContractPage()"
+                  ng-controller="addressTypeCtrl">
+          <span class="col col-50 custom-label">Contract Type</span>
+          <label class="col col-50 custom-type-label ng-binding custom-label"
+                 style="font-size: small;">{{selectedContractTypeOption}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>-->
+
+        <ion-item class="item-icon-right item row custom-row" ng-click="gotoMap()">
+          <span class="col col-50 custom-label">Project Location</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+
+        <!-- <ion-item class="item-icon-right item row custom-row" ng-click="openContractTypeModel()">
+          <span class="col col-50 custom-label">Contract Type</span>
+          <label class="col col-50 custom-type-label ng-binding custom-label"
+                 style="font-size: small;">{{project.contractType}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item> -->
+
+        <ion-item class="item-icon-right item row custom-row" style="padding-top: 5px;" ng-click="openDeliveryTypeModel()">
+          <span class="col col-50 custom-label" style="padding-top: 2%;">Pamphlet Delivery</span>
+          <label class="col col-50 custom-type-label ng-binding custom-label"
+                 style="font-size: small;">{{project.pamphletDeliveryType}}</label>
+          <i class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+
+        <ion-item class="item-icon-right item row custom-row" style="padding-top: 5px;">
+          <span class="col col-50 custom-label" style="padding-top: 2%;">Pamphlet Delivery Date</span>
+          <input ng-if="EditDate" style="border: 0px;background: transparent;text-align: right;" type="date"  placeholder="dd/mm/yyyy" ng-model="project.pamphletDeliveryDate">
+          <input ng-if="!EditDate" style="border: 0px;background: transparent;text-align: right;" type="date" readonly placeholder="dd/mm/yyyy" ng-model="project.pamphletDeliveryDate">
+          <i ng-if="EditDate" class="icon ion-ios-arrow-right"></i>
+        </ion-item>
+
+
+
+        <ion-toggle ng-model="project.active" toggle-class="toggle-royal" ng-disabled="aboveSupervizerRole">Renovate Right Pamphlet</ion-toggle>
+
+
+      </fieldset>
+    </form>
+  </ion-content>
+
+</ion-view>

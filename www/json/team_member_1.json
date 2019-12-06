@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "name" :"vikas",
+  "homePhone" : "123456",
+  "cellPhone" : "123456",
+  "emergancyPhone": "123456",
+  "emergancyContact": "Mirish Sorthiya",
+  "address1": "6404 Ivy Lane",
+  "address2": "",
+  "city" : "Greenbelt",
+  "state" : "New York",
+  "zipCode":"398801",
+  "country": "USA",
+  "userType": "CW"
+}

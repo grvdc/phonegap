@@ -1,0 +1,29 @@
+[
+
+  {
+    "id": 1,
+    "name": "vikas",
+    "userType": "CW"
+  },
+
+  {
+    "id": 3,
+    "name": "Idrish Sorthiya",
+    "userType": "NCW"
+  },
+  {
+    "id": 2,
+    "name": "john",
+    "userType": "NCW"
+  },
+  {
+    "id": 4,
+    "name": "Suresh Bangora",
+    "userType": "NCW"
+  },
+  {
+    "id": 5,
+    "name": "Adam Smith",
+    "userType": "NCW"
+  }
+]

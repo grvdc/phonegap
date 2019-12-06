@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "equipmentName": "N-100 or equal respirator"
+  },
+  {
+    "id": 2,
+    "equipmentName": "Disposable coveralls or full suit"
+  },
+  {
+    "id": 3,
+    "equipmentName": "Leather of canvas gloves"
+  },
+  {
+    "id": 4,
+    "equipmentName": "Disposable heavy duty waste bags"
+  },
+  {
+    "id": 5,
+    "equipmentName": "Eye protection"
+  },
+  {
+    "id": 6,
+    "equipmentName": "Hepa Vacuum"
+  },
+  {
+    "id": 7,
+    "equipmentName": "Tape measure"
+  },
+  {
+    "id": 8,
+    "equipmentName": "Flash lights"
+  },
+  {
+    "id": 9,
+    "equipmentName": "Ladders"
+  },
+  {
+    "id": 10,
+    "equipmentName": "Disposable non-latex gloves"
+  },
+  {
+    "id": 11,
+    "equipmentName": "Disposable foot covers"
+  },
+  {
+    "id": 12,
+    "equipmentName": "Disposable duct tape"
+  },
+  {
+    "id": 13,
+    "equipmentName": "Spray bottles"
+  },
+  {
+    "id": 14,
+    "equipmentName": "Utility knife"
+  },
+  {
+    "id": 15,
+    "equipmentName": "2 bucket pail mop system"
+  },
+  {
+    "id": 16,
+    "equipmentName": "Rope"
+  },
+  {
+    "id": 17,
+    "equipmentName": "Work lights"
+  },
+  {
+    "id": 18,
+    "equipmentName": "Fall harness"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Lump Sum",
+    "abbreviation": "Lump Sum",
+    "description" : "Price is fixed for a set of documents."
+  },
+  {
+    "name": "Cost Plus % fee, not to Exceed",
+    "abbreviation": "Cost Plus",
+    "description" : "Two-tiered approach, percentage of the spent on the project but the fee cannot exceed a specified amount."
+  },
+  {
+    "name": "Sub Contract",
+    "abbreviation": "Sub Contract",
+    "description" : "The contractor does not have a direct relationship to the owner."
+  },
+  {
+    "name": "Insurance Agreement/Unit Pricing",
+    "abbreviation": "Unit Pricing",
+    "description" : "Unit pricing provided by the contractor at the time of the bid. Administrative costs are part of the pricing, generally with % of the contract for profit."
+  }
+]

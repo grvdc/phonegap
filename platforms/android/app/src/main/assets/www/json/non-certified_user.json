@@ -1,0 +1,7 @@
+{
+  "userName" : "suresh",
+  "emailId" : "suresh-bangora@mail.com",
+  "roles" : "ROLE_USER,ROLE_NCW",
+  "type" : "NCW",
+  "companyId" : 1
+}

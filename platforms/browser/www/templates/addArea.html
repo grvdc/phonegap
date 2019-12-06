@@ -1,0 +1,61 @@
+<ion-view title="Add Area" id="addAreaPage" class=" ">
+<style>
+.toggle-text > .track{
+background: #5fb9e4;
+color:#fff;
+}
+.toggle.toggle-my-theme input:checked + .track{
+background: #1C5EAA;
+color:#fff;
+}
+.areaList .item{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 5px;
+}
+</style>
+  <ion-nav-buttons side="right">
+    <button check-permission="!ROLE_NCW" ng-click="saveOrUpdate()"  class="button button-icon" ><img class="saveIcon-image" src="img/icon/right_sign.png"></button>
+  </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header">
+
+    <form id="addArea-form6" class="list  " ng-submit="addArea()">
+
+        <div class="row remove-row-padding">
+          <div class="spacer" style="height: 10px;"></div>
+          <label class="item item-input col-75 item-search" id="addArea-input3" >
+            <input type="text" placeholder="Tap to add Area Name" ng-model="newArea.areaName" custom-validation>
+          </label>
+          <div style="padding:2%;"></div>
+          <button id="addArea-button32" class=" button button-royal col-20 item-search">Add</button>
+       </div>
+
+    </form>
+
+    <div id="allArea">
+
+        <!--<ion-toggle   ion-toggle-text  ng-repeat="area in areaList" toggle-class="toggle-my-theme"
+                  ng-checked="area.internal"  ng-model="area.internal" class="toggle-my-theme ">
+          {{area.areaName}}
+      </ion-toggle>-->
+
+
+        <div class="row areaList" ng-repeat="area in areaList |orderBy :'areaName'">
+          <ion-item on-hold="onHoldPopup(area)" class="col-67 remove-right-border">{{area.areaName}}</ion-item>
+          <ion-toggle   ion-toggle-text   toggle-class="toggle-my-theme"
+                        ng-checked="area.internal"  ng-model="area.internal" class="toggle-my-theme remove-left-border col">
+          </ion-toggle>
+        </div>
+
+
+    </div>
+
+
+
+  </ion-content>
+
+
+</ion-view>

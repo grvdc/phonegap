@@ -1,0 +1,35 @@
+
+<ion-view title="Project List" id="page1" class=" " >
+
+
+  <ion-content  class="has-header">
+
+    <div id="projectIist-form3" class="list"  style="padding-top: 0px;padding-bottom: 0px;">
+
+      <!--<div class="item item-icon-right" ng-repeat="project in projectlist"
+      ng-class="project.active ? '' : 'disable'" ng-click="goToProject(project.active)">
+        <span ng-bind="project.name" >
+        </span>
+         <i class="icon ion-chevron-right"></i>
+      </div>-->
+
+      <a class="item item-avatar item-icon-right item-icon-left" ng-repeat="project in projectlist"
+         ng-class="project.active ? '' : 'disable'" ng-click="goToProject(project)">
+        <!--<i class="icon ion-home"></i>-->
+        <ng-letter-avatar class="icon" data={{project.occupantName}}></ng-letter-avatar>
+        <span ng-bind="project.occupantName"  class="project-title"></span>
+
+        <p class="project-sub-title" ng-bind="project.occupantType"></p>
+      </a>
+
+    </div>
+
+    <div ng-if="projectlist.length == 0">
+      <div class="empty-list-view">
+        Hi! No project. <span check-permission="!ROLE_NCW">Add Project by clicking on 'Add'</span>
+      </div>
+    </div>
+
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,85 @@
+<ion-view title="Select Areas" class="item-text-wrap" id="selectAreaPage" >
+<style>
+.occupant-modal h1{
+background:#5b39b7;
+margin: 0px!important;
+color: #ffffff!important;
+font-size:14pt!important;
+}
+#selectArea-form1 .item{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 5px;
+}
+</style>
+
+  <ion-nav-buttons side="right">
+    <button ng-click="goToAddArea()" class="button button-icon saveIcon ion-android-add select-area-add-button"></button>
+    <button check-permission="!ROLE_NCW" ng-click="saveOrUpdate()"  class="button button-icon"><img class="saveIcon-image" src="img/icon/right_sign.png"></button>
+  </ion-nav-buttons>
+
+    <ion-content class="has-header" scroll="false">
+       <!-- <div id="selectArea-form1" ng-repeat="area in areaList">
+            <ion-checkbox  ng-model="area.isActive" ng-change="changActiveState(area)" content="area.areaName"> {{area.areaName}} </ion-checkbox>
+        </div>-->
+      <div class="scroll" style="height:100%;overflow:scroll;padding:0px 10px">
+        <div id="selectArea-form1" ng-repeat="area in areaList |orderBy :'areaName'| filter:getActiveAndNonDefaultAreas">
+          <ion-checkbox ng-model="area.isActive"  content="area.areaName" class="item-checkbox-right select-area-label"> {{area.areaName}} </ion-checkbox>
+        </div>
+      </div>
+
+      <!--<div ng-hide="isReplyFormOpen" class="scroll" style="height:50%;overflow:scroll;border-bottom: solid #886aea;">
+        <div id="selectArea-form1" ng-repeat="area in areaList |orderBy :'areaName'| filter:getNonActiveAndDefaultAreas">
+          <ion-checkbox ng-model="area.isActive"  content="area.areaName" class="item-checkbox-right select-area-label"> {{area.areaName}} </ion-checkbox>
+        </div>
+      </div>-->
+    </ion-content>
+<!--  <ion-footer-bar class="bar bar-footer bar-stable">
+    <div id="selectArea-button-bar4" class=" button-bar ">
+      <button ng-click="goToAssignments()" id="assignmentScreenId" class=" button button-calm">Assignments
+      </button>
+      <button  ng-click="goToAddArea()"  id="addAreaScreenId" class=" button button-energized">Add Area
+      </button>
+    </div>
+  </ion-footer-bar>-->
+
+  <ion-footer-bar class="bar bar-footer" style="margin-bottom: 2%;margin-top: 4%;">
+    <div class="row">
+
+
+      <button class=" button button-royal-select-area" style="border-radius:25px;width:35%;margin-left:5%;margin-right:10%;"
+              ng-click="openDefaultAreaModel()">Area List</button>
+
+      <button class=" button button-royal-select-area"
+              style="border-radius:25px;width:35%;margin-left:10%;margin-right:5%;"
+              ng-click="goToAssignments()">Assignments
+      </button>
+      <!--<button id="certifiedMemberSortId1" class="button " style="border-radius:25px;width:35%;margin-left:5%;margin-right:10%;"
+              ng-click="isReplyFormOpen = !isReplyFormOpen"
+              ng-class="{'button-royal':!isReplyFormOpen ,'button-outline':isReplyFormOpen }" ng-bind="isReplyFormOpen ? 'Project':'Default'">
+
+      </button>-->
+
+
+    </div>
+   <!-- <div id="nlActionButton" class="switch" ng-class="activeClass?'active':''">
+
+      <div class="action-button depth z1 option one" ng-click="myFilter={projectId : '!'}" style="font-size:10px">
+        Default
+      </div>
+      <div class="action-button depth z1 option two" ng-click="myFilter={projectId : '!!'}" style="font-size:10px">
+        Project
+      </div>
+      <div class="action-button depth z1 option three" ng-click="myFilter={}" style="font-size:10px">
+        All
+      </div>
+      <div id="nlPlus" class="action-button depth z1 plus" ng-click="changeActiveState()">
+      <span>
+        <img style="height: 18px;" src="img/icon/filter.png">
+      </span>
+      </div>
+    </div>-->
+  </ion-footer-bar>
+</ion-view>

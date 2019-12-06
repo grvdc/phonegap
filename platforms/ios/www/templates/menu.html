@@ -1,0 +1,70 @@
+<ion-side-menus   enable-menu-with-back-views="false">
+  <ion-side-menu-content watch-menu>
+    <ion-nav-bar class="bar-royal" ng-class="headerChangeColor" id="header" align-title="center">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left" >
+        <button class="button button-icon button-clear ion-navicon" ng-if="isVisible" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+    <div class="app-content-backdrop backdrop"></div>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21" class="ncw-side-menu" >
+    <ion-header-bar class="bar-royal">
+         <div class="user-info">
+          <h2 class="menu-user-name">{{username}}</h2>
+          <div class="menu-user-type">{{usertype}}</div>
+        </div>
+        <div class="user-info-close"></div>
+    </ion-header-bar>
+    <ion-content padding="false" class="side-menu-left has-header">
+      <ion-list id="menu-list2">
+
+
+        <ion-item ui-sref="menu.projectList({reload: true})" menu-close="" ng-click="">
+          <i class="button-icon menu-icon-item ">
+          <img style="width: 25px;height: auto;" src="img/icon/menu/list.png"></i>
+          <div style="margin-left: 2%;" class="menu-label">Project List</div>
+        </ion-item>
+
+
+
+        <ion-item ui-sref="menu.companyMembers" menu-close="" class="  " ng-click="">
+        <i class="button-icon menu-icon-item ">
+        <img style="width: 25px;height: auto;" src="img/icon/menu/members.png"></i>
+        <div class="menu-label" style="margin-left: 2%;">Company Members</div></ion-item>
+
+        <ion-item ui-sref="menu.courseWork" menu-close="" class="  " ng-click="">
+        <i class="button-icon menu-icon-item ">
+        <img style="width: 25px;height: auto;" src="img/icon/menu/coursework.png"></i>
+        <div class="menu-label" style="margin-left: 2%;">Course Work</div></ion-item>
+
+        <ion-item ui-sref="menu.trainingVideos" menu-close="" class="  " ng-click="">
+        <i class="button-icon menu-icon-item ">
+        <img style="width: 25px;height: auto;" src="img/icon/menu/training.png"></i>
+        <div class="menu-label" style="margin-left: 2%;">Training Videos</div></ion-item>
+
+        <ion-item ui-sref="menu.captiveGame" menu-close="" class="  " ng-click="">
+        <i class="button-icon menu-icon-item ">
+        <img style="width: 25px;height: auto;" src="img/icon/menu/play.png"></i>
+        <div class="menu-label" style="margin-left: 2%;">Play To Learn Game</div></ion-item>
+
+        <!--<div class="spacer login"></div>-->
+        <ion-item ui-sref="menu.help" menu-close="" class="  " ng-click="">
+        <i class="button-icon menu-icon-item ">
+        <img style="width: 25px;height: auto;" src="img/icon/menu/help.png"></i>
+        <div class="menu-label" style="margin-left: 2%;">RRP Q&A</div></ion-item>
+
+        <ion-item ui-sref="menu.changeExitingPassword" menu-close="" class="  " ng-click="">
+        <i class="button-icon menu-icon-item ">
+        <img style="width: 25px;height: auto;" src="img/icon/menu/change_password.png"></i>
+        <div class="menu-label" style="margin-left: 2%;">Change Password</div></ion-item>
+
+        <ion-item menu-close="" class="item-content" ng-click="logout(click)">
+        <i class="button-icon menu-icon-item ">
+        <img style="width: 25px;height: auto;" src="img/icon/menu/logout.png"></i>
+        <div class="menu-label" style="margin-left: 2%;">Logout</div></ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,15 @@
+<ion-view title="Assigned Area" id="NCWAreaPage" class=" " >
+
+
+    <ion-content class="has-header">
+
+        <div id="selectArea-form1" ng-repeat="area in areaList|orderBy :'areaName'">
+            <ion-item name="dinning-room" class=" " content="area.areaName"> {{area.areaName}} </ion-item>
+        </div>
+
+        <!--<div id="selectArea-button-bar4" class=" button-bar ">
+            <a ui-sref="menu.addArea" id="selectArea-button19" class=" button button-royal  button-block button-outline ">Add Area</a>
+
+        </div>-->
+    </ion-content>
+</ion-view>

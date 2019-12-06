@@ -1,0 +1,38 @@
+<ion-modal-view class="member-type-modal" ng-controller="MemberTypeModelController">
+
+  <ion-content delegate-handle="">
+
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="member.userType"
+                  name="memberType" value="SUPERVISOR" ng-disabled="isSupervizor"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Supervisor</ion-radio>
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="member.userType"
+                  name="memberType" value="FOREMAN" ng-disabled="isForeman"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Foreman</ion-radio>
+
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="member.userType"
+                  name="memberType" value="CW" ng-disabled="isNonCertifiedUser"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Certified Renovator</ion-radio>
+
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="member.userType"
+                  name="memberType" value="NCW" ng-disabled="isNonCertifiedUser"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Non-Certified Worker</ion-radio>
+
+       <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="member.userType"
+                  name="memberType" value="WORKER" ng-disabled="isOther"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Worker</ion-radio>
+
+      <ion-radio  style="width:100%; border-left: 0px solid;" ng-model="member.userType"
+                  name="memberType" value="OTHER" ng-disabled="isOther"
+                  class="item item-input pull-left remove-right-border " ng-change="changeType()">Other</ion-radio>
+
+
+  </ion-content>
+
+<ion-footer-bar class="bar bar-footer" style="background-position: bottom;">
+    <div class="action-action" >
+       <button ng-click="cancelOccupantModel()" class="button button-royal-select-area.button-outline">Cancel</button>
+       <button ng-click="okOccupantModel()" class="button button-royal">Ok</button>
+    </div>
+  </ion-footer-bar>
+
+</ion-modal-view>

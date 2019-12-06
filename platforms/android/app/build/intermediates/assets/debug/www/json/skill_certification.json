@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "skillName" : "Skill One",
+    "memberId" : 1,
+    "score" : 75
+  },
+  {
+    "id": "2",
+    "skillName" : "Skill Two",
+    "memberId" : 1,
+    "score" : 60
+  },
+  {
+    "id": "3",
+    "skillName" : "Skill Three",
+    "memberId" : 1,
+    "score" : 90
+  },
+  {
+    "id": "4",
+    "skillName" : "Skill Four",
+    "memberId" : 1,
+    "score" : 80
+  }
+]

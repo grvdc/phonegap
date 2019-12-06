@@ -1,0 +1,206 @@
+<ion-view title="Company Members">
+<style>
+.filterButton{margin:0px 3px!important;padding: 5px 15px!important;font-size: 12pt!important;line-height: 12px!important;}
+.has-footer {
+    bottom: 75px;
+}
+.remove_member .popup-head {
+    background: #27589b;
+    color:#ffffff;
+}
+.remove_member .popup-title{
+color: #fff;
+font-size: 16pt;
+}
+.remove_member{
+color:#645e73;
+}
+.remove_member .button.button-royal{
+background: #27589b;
+font-size:12pt;
+}
+.remove_member .button.button-stable.button-outline{
+border:2px solid #f0edf7;
+color:#645e73;
+font-size:12pt;
+}
+</style>
+  <ion-nav-buttons side="right">
+    <button ng-if="isEditable" ng-click="addNewMember()" class="button button-icon button-clear ion-android-add" ></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+    <ion-list id="teamMembers-list10">
+
+      <ion-item class="item-icon-right teamMembers" id="teamMembers-list-item29" ng-repeat="member in memberList | filter:myFilter:true" style="padding-bottom: 3%;padding-top: 3%;" ng-if="member.userType != 'ADMIN'">
+          <div class="row">
+            <div class="item-avatar" ng-click="showMemberLink(member)" style="padding-right: 45%;">
+              <ng-letter-avatar class="icon" data={{member.name}}></ng-letter-avatar>
+              <h2>{{member.name}}</h2>
+              <p ng-if="member.userType == 'CW'">Certified Renovator</p>
+              <p ng-if="member.userType == 'NCW'">Non-Certified Worker</p>
+              <p ng-if="member.userType == 'ADMIN'">Administrator</p>
+              <p ng-if="member.userType == 'SUPERVISOR'">Supervisor</p>
+              <p ng-if="member.userType == 'OTHER'">Other</p>
+              <p ng-if="member.userType == 'FOREMAN'">Foreman</p>
+              <p ng-if="member.userType == 'WORKER'">Worker</p>
+            </div>
+
+            <div ng-if="LoginUserType == 'ADMIN'">
+            <i ng-if="member.userType != 'ADMIN' " class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+               <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+            </div>
+
+            <div ng-if="LoginUserType == 'SUPERVISOR'">
+
+              <i ng-if="member.userType == 'FOREMAN'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+              <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+             </i>
+
+             <i ng-if="member.userType == 'CW'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+              <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+
+            <i ng-if="member.userType == 'NCW'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+             <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+
+             <i ng-if="member.userType == 'OTHER'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+              <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+
+             <i ng-if="member.userType == 'WORKER'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+              <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+
+            </div>
+
+            <div ng-if="LoginUserType == 'FOREMAN'">
+
+             <i ng-if="member.userType == 'CW'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+              <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+
+            <i ng-if="member.userType == 'NCW'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+              <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+             <i ng-if="member.userType == 'OTHER'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+             <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+            <i ng-if="member.userType == 'WORKER'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+              <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+
+            </div>
+
+            <div ng-if="LoginUserType == 'CW'">
+
+
+            <i ng-if="member.userType == 'NCW'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+             <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+
+             <i ng-if="member.userType == 'OTHER'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+             <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+            <i ng-if="member.userType == 'WORKER'" class="icon" ng-click="member.userType == 'ADMIN' ? 'restrictDelete(member.id,member.name)' : deleteMember(member.id,member.name)" style="padding-left: 5%;" ng-disabled="member.userType == 'ADMIN'">
+              <img class="deleteIcon-image" src="img/icon/delete_icon.png">
+            </i>
+
+            </div>
+
+
+
+          </div>
+      </ion-item>
+
+
+
+      <!--<ion-item class="item-icon-right  " id="teamMembers-list-item30" ui-sref="menu.teamRecord({memberId:2})">Suresh Bangora
+          <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>
+      <ion-item class="item-icon-right  " id="teamMembers-list-item31" ui-sref="menu.teamRecord({memberId:3})">Adam Smith
+          <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>-->
+
+    </ion-list>
+
+  </ion-content>
+  <!--<div class="bar bar-footer">
+    <button id="teamMembers-button4" class=" button   button-dark  col-40 ">Non Certified</button>
+    <div class="col-20"></div>
+    <button id="teamMembers-button6" class=" button   button-dark  col-40">Certified</button>
+
+  </div>-->
+  <ion-footer-bar class="bar bar-footer" style="margin-bottom: 2%;margin-top: 4%;">
+    <div id="selectArea-button-bar4 " class="row filterButtonRow">
+
+      <button  id="nonCertifiedMemberSortId" class="button button-member-royal filterButton" style=""
+      ng-click="isSupervisorApply=!isSupervisorApply;
+      isFormanApply=false;
+      isNonCertifiedApply=false;
+      isCertifiedApply=false;
+      isOtherApply=false;
+      isCertifiedApply=false;
+      isWorkerApply=false;
+      isSupervisorApply
+      ? myFilter={userType : 'SUPERVISOR'}  : myFilter = {}"  ng-class="{'button-outline' : !isSupervisorApply}">SUPERVISOR</button>
+
+      <button  id="nonCertifiedMemberSortId" class="button button-member-royal filterButton" style=""
+      ng-click="isFormanApply=!isFormanApply;
+      isSupervisorApply=false;
+      isNonCertifiedApply=false;
+      isCertifiedApply=false;
+      isOtherApply=false;
+      isCertifiedApply=false;
+      isWorkerApply=false;
+      isFormanApply
+      ? myFilter={userType : 'FOREMAN'}  : myFilter = {}"  ng-class="{'button-outline' : !isFormanApply}">FOREMAN</button>
+
+      <button  id="nonCertifiedMemberSortId" class="button button-member-royal filterButton" style=""
+      ng-click="isNonCertifiedApply=!isNonCertifiedApply;
+      isSupervisorApply=false;
+      isFormanApply=false;
+      isCertifiedApply=false;
+      isOtherApply=false;
+      isCertifiedApply=false;
+      isWorkerApply=false;
+      isNonCertifiedApply
+      ? myFilter={userType : 'NCW'}  : myFilter = {}"  ng-class="{'button-outline' : !isNonCertifiedApply}">NCW</button>
+
+      <button  id="certifiedMemberSortId"    class="button button-member-royal filterButton" style=""
+      ng-click="isCertifiedApply=!isCertifiedApply;
+      isSupervisorApply=false;
+      isFormanApply=false;
+      isNonCertifiedApply=false;
+      isOtherApply=false;
+      isWorkerApply=false;
+      isCertifiedApply
+      ? myFilter={userType : 'CW'}  : myFilter = {}"  ng-class="{'button-outline' : !isCertifiedApply}" >CERTIFIED</button>
+
+      <button  id="certifiedMemberSortId"    class="button button-member-royal filterButton" style=""
+      ng-click="isOtherApply=!isOtherApply;
+      isSupervisorApply=false;
+      isFormanApply=false;
+      isNonCertifiedApply=false;
+      isCertifiedApply=false;
+      isCertifiedApply=false;
+      isWorkerApply=false;
+      isOtherApply
+      ? myFilter={userType : 'OTHER'}  : myFilter = {}"  ng-class="{'button-outline' : !isOtherApply}" >OTHER</button>
+
+      <button  id="certifiedMemberSortId"    class="button button-member-royal filterButton" style=""
+      ng-click="isWorkerApply=!isWorkerApply;
+      isSupervisorApply=false;
+      isFormanApply=false;
+      isNonCertifiedApply=false;
+      isCertifiedApply=false;
+      isOtherApply=false;
+      isCertifiedApply=false;
+      isWorkerApply
+      ? myFilter={userType : 'WORKER'}  : myFilter = {}"  ng-class="{'button-outline' : !isWorkerApply}" >WORKER</button>
+
+    </div>
+  </ion-footer-bar>
+</ion-view>

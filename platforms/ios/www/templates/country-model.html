@@ -1,0 +1,49 @@
+<ion-modal-view class="country-modal" ng-controller="CountryModelController">
+<style>
+.row.active .radio-content,
+.row.active i{
+color:#785dc8;
+font-family: 'proxima_novasemibold';
+}
+.row.active i.ion-ios-information-outline,
+.row i.ion-ios-information-outline{
+position: relative;float:right;font-size:30px;
+}
+.action-action{
+position:absolute;
+right:15px;
+}
+.action-action label{
+color:#785dc8;
+font-family: 'proxima_novasemibold';
+float:left;
+padding:10px;
+}
+</style>
+  <ion-content delegate-handle="country">
+
+    <div ng-class="{'row active': project.country == country.abbreviation, 'row': project.country != country.abbreviation}" ng-repeat="country in countryList" style="padding: 0;padding-left: 5px;padding-right: 5px;">
+      <ion-radio  style="width:85%; border-left: 0px solid;" ng-model="project.country" name="countryId"
+                  ng-value="country.abbreviation" ng-disabled="isNonCertifiedUser" class="item item-input pull-left remove-right-border ">
+                  {{country.abbreviation}}
+      </ion-radio>
+
+        <span style="width:15%;cursor:pointer;padding-right:5px;border-right: 0px solid;" class="item remove-left-border" ng-click="openCountryDefinition(country.name,country.description);popover.show($event)">
+          <i class="icon  ion-ios-information-outline"></i>
+        </span>
+    </div>
+
+  </ion-content>
+
+<ion-footer-bar class="bar bar-footer" style="background-position: bottom;">
+
+      <div class="action-action" >
+       <button ng-click="cancelCountryModel()" class="button button-royal-select-area.button-outline">Cancel</button>
+       <button ng-click="okCountryModel()" class="button button-royal">Ok</button>
+      </div>
+
+  </ion-footer-bar>
+
+
+
+</ion-modal-view>
